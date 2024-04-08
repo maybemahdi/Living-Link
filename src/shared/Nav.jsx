@@ -90,7 +90,12 @@ const Nav = () => {
             {navLinks}
           </ul>
         </div>
-        <Link to={'/'} className="btn btn-ghost text-green-500 text-2xl">Living-Link</Link>
+        <Link
+          to={"/"}
+          className="font-bold no-underline text-green-500 text-2xl"
+        >
+          Living-Link
+        </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal text-[#131313CC] font-semibold gap-3 text-base px-1">

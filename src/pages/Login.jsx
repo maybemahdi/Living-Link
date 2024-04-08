@@ -1,12 +1,12 @@
 import { useContext, useState, useRef } from "react";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import { Link, useNavigate, useLocation } from "react-router-dom";
-import { FaRegEye, FaRegEyeSlash } from "react-icons/fa"; // Import Eye icons
+import { FaGithub, FaGoogle, FaRegEye, FaRegEyeSlash } from "react-icons/fa"; // Import Eye icons
 import toast from "react-hot-toast";
-import "../App.css"
+import "../App.css";
 
 const Login = () => {
-  const { signIn } = useContext(AuthContext);
+  const { signIn, googleLogin, githubLogin } = useContext(AuthContext);
   const [showPassword, setShowPassword] = useState(false);
   const emailRef = useRef(); // Add useRef for email input
   const navigate = useNavigate();
@@ -24,56 +24,92 @@ const Login = () => {
       })
       .catch((err) => console.log(err));
   };
+  const loginWithGoogle = () => {
+    googleLogin()
+      .then((res) => {
+        console.log(res);
+        toast.success("Logged in successfully");
+      })
+      .catch((err) => console.log(err));
+  };
+  const loginWithGithub = () => {
+    githubLogin()
+      .then((res) => {
+        console.log(res);
+        toast.success("Logged in successfully");
+      })
+      .catch((err) => console.log(err));
+  };
 
   return (
-      <div className="bg-grey-lighter min-h-[80vh] flex flex-col">
-        <div className="container max-w-md mx-auto flex-1 flex flex-col items-center justify-center px-2">
-          <div className="bg-white px-6 py-4 rounded shadow-xl text-black w-full">
-            <h1 className="mb-8 text-3xl text-center">Log in</h1>
-            <form onSubmit={handleLogin}>
+    <div className="bg-grey-lighter min-h-[80vh] flex flex-col">
+      <div className="container max-w-md mx-auto flex-1 flex flex-col items-center justify-center px-2">
+        <div className="bg-white px-6 py-4 rounded shadow-xl text-black w-full">
+          <h1 className="mb-8 text-3xl text-center">Log in</h1>
+          <form onSubmit={handleLogin}>
+            <input
+              type="email"
+              ref={emailRef}
+              className="block border border-grey-light w-full p-3 rounded mb-4"
+              name="email"
+              placeholder="Email"
+              required
+            />
+
+            <div className="relative flex">
               <input
-                type="email"
-                ref={emailRef}
+                type={showPassword ? "text" : "password"}
                 className="block border border-grey-light w-full p-3 rounded mb-4"
-                name="email"
-                placeholder="Email"
+                name="password"
+                placeholder="Password"
                 required
               />
-
-              <div className="relative flex">
-                <input
-                  type={showPassword ? "text" : "password"}
-                  className="block border border-grey-light w-full p-3 rounded mb-4"
-                  name="password"
-                  placeholder="Password"
-                  required
-                />
-                <span
-                  onClick={() => setShowPassword(!showPassword)}
-                  className="absolute right-3 cursor-pointer top-[21%]"
-                >
-                  {showPassword ? <FaRegEyeSlash /> : <FaRegEye />}
-                </span>
-              </div>
-              <button
-                type="submit"
-                className="w-full text-center py-3 rounded border-0 cursor-pointer bg-black text-white font-semibold hover:bg-green-dark focus:outline-none my-1"
+              <span
+                onClick={() => setShowPassword(!showPassword)}
+                className="absolute right-3 cursor-pointer top-[21%]"
               >
-                Login
-              </button>
-            </form>
-          </div>
-          <div className="text-grey-dark mt-6">
-            New to our Website?
-            <Link
-              to={"/register"}
-              className="ml-1 font-bold text-blue-500 border-b border-blue text-blue"
+                {showPassword ? <FaRegEyeSlash /> : <FaRegEye />}
+              </span>
+            </div>
+            <button
+              type="submit"
+              className="w-full text-center py-3 rounded border-0 cursor-pointer bg-black text-white font-semibold hover:bg-green-dark focus:outline-none my-1"
             >
-              Sign Up
-            </Link>
+              Login
+            </button>
+          </form>
+          <div className="flex justify-center gap-5 items-center my-5">
+            <button
+            onClick={loginWithGoogle}
+              className="inline-flex overflow-hidden cursor-pointer text-white bg-gray-900 rounded group"
+            >
+              <span className="px-3.5 py-2 text-white bg-purple-500 group-hover:bg-purple-600 flex items-center justify-center">
+              <FaGoogle size={20} />
+              </span>
+              <span className="pl-4 pr-5 py-2.5">Google</span>
+            </button>
+            <button
+            onClick={loginWithGithub}
+              className="inline-flex overflow-hidden cursor-pointer text-white bg-gray-900 rounded group"
+            >
+              <span className="px-3.5 py-2 text-white bg-purple-500 group-hover:bg-purple-600 flex items-center justify-center">
+              <FaGithub size={20} />
+              </span>
+              <span className="pl-4 pr-5 py-2.5">Github</span>
+            </button>
           </div>
         </div>
+        <div className="text-grey-dark mt-6">
+          New to our Website?
+          <Link
+            to={"/register"}
+            className="ml-1 font-bold text-blue-500 border-b border-blue text-blue"
+          >
+            Sign Up
+          </Link>
+        </div>
       </div>
+    </div>
   );
 };
 
