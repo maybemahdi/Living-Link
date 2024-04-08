@@ -3,36 +3,63 @@ import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import toast from "react-hot-toast";
+import { updateProfile } from "firebase/auth";
+import { auth } from "../Firebase/firebase.config";
 
 const Register = () => {
-  const { createUser, updateUserProfile } = useContext(AuthContext);
+  const { createUser } = useContext(AuthContext);
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
+  const handleFirebaseError = (errorCode) => {
+    switch (errorCode) {
+      case "Firebase: Error (auth/email-already-in-use).":
+        return "The Email You provided is already registered in our Database.";
+      // Add more cases for other error codes as needed
+      default:
+        return "An error occurred. Please try again later.";
+    }
+  };
   const handleSubmit = (e) => {
     e.preventDefault();
     const name = e.target.name.value;
     const email = e.target.email.value;
     const photo = e.target.photoURL.value;
     const password = e.target.password.value;
-    const terms = e.target.terms.checked;
     const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z]).+$/;
-    console.log(name, email, password, terms, photo);
+
     if (password.length < 6) {
-      return toast.error("Password must be 6 characters or long");
+      return toast.error("Password must be 6 characters or longer");
     }
+
     if (!passwordRegex.test(password)) {
       return toast.error(
-        "Password must contain one Uppercase and one Lowercase Letter"
+        "Password must contain at least one uppercase and one lowercase letter"
       );
     }
+
     createUser(email, password)
       .then((res) => {
         console.log(res.user);
+        // const user = res.user; // Get the user object from the response
         toast.success("Account created successfully");
-        updateUserProfile(name, photo);
+
+        // Wait for user object to become available before updating the profile
+        updateProfile(auth.currentUser, {
+          displayName: name,
+          photoURL: photo,
+        })
+          .then(() => {
+            toast.success("Profile Updated");
+          })
+          .catch((err) => console.log(err));
+
         navigate("/");
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        const errorMessage = handleFirebaseError(err.message);
+        console.log(err.message);
+        toast.error(errorMessage);
+      });
   };
 
   return (

@@ -11,6 +11,16 @@ const Login = () => {
   const emailRef = useRef(); // Add useRef for email input
   const navigate = useNavigate();
   const location = useLocation();
+ 
+  const handleFirebaseError = (errorCode) => {
+    switch (errorCode) {
+      case "Firebase: Error (auth/invalid-credential).":
+        return "Wrong email or password. Please try again.";
+      // Add more cases for other error codes as needed
+      default:
+        return "An error occurred. Please try again later.";
+    }
+  };
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -22,7 +32,10 @@ const Login = () => {
         toast.success("Logged in successfully");
         navigate(location.state ? location.state : "/");
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        const errorMessage = handleFirebaseError(err.message);
+        toast.error(errorMessage);
+      });
   };
   const loginWithGoogle = () => {
     googleLogin()
@@ -38,7 +51,18 @@ const Login = () => {
         console.log(res);
         toast.success("Logged in successfully");
       })
-      .catch((err) => console.log(err));
+      .catch((error) => {
+        setLoading(false);
+        // Check if the error is due to invalid credentials
+        if (error.code === "auth/invalid-credential") {
+          // Display toast for wrong password
+          toast.error("Wrong password. Please enter correct credentials.");
+        } else {
+          // For other errors, display a generic error message
+          toast.error("An error occurred. Please try again later.");
+        }
+        toast.error("Error signing in: ", error);
+      });
   };
 
   return (
@@ -80,20 +104,20 @@ const Login = () => {
           </form>
           <div className="flex justify-center gap-5 items-center my-5">
             <button
-            onClick={loginWithGoogle}
+              onClick={loginWithGoogle}
               className="inline-flex overflow-hidden cursor-pointer text-white bg-gray-900 rounded group"
             >
               <span className="px-3.5 py-2 text-white bg-purple-500 group-hover:bg-purple-600 flex items-center justify-center">
-              <FaGoogle size={20} />
+                <FaGoogle size={20} />
               </span>
               <span className="pl-4 pr-5 py-2.5">Google</span>
             </button>
             <button
-            onClick={loginWithGithub}
+              onClick={loginWithGithub}
               className="inline-flex overflow-hidden cursor-pointer text-white bg-gray-900 rounded group"
             >
               <span className="px-3.5 py-2 text-white bg-purple-500 group-hover:bg-purple-600 flex items-center justify-center">
-              <FaGithub size={20} />
+                <FaGithub size={20} />
               </span>
               <span className="pl-4 pr-5 py-2.5">Github</span>
             </button>

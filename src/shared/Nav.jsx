@@ -1,13 +1,11 @@
 import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
-import { FaUserCircle } from "react-icons/fa";
 import toast from "react-hot-toast";
 import "../App.css";
 
 const Nav = () => {
-  const { user, logOut } = useContext(AuthContext);
-  console.log(user);
+  const { user, logOut} = useContext(AuthContext);
   const navLinks = (
     <>
       <li>
@@ -104,18 +102,17 @@ const Nav = () => {
       </div>
       <div className="navbar-end gap-4">
         <div className="relative top-[3px]">
-          {user?.photoURL ? (
+          {/* {console.log(user.photoURL)} */}
+          {user?.photoURL && (
             <img
               className="w-11 rounded-full cursor-pointer"
-              src={user.photoURL}
+              src={user?.photoURL}
               alt=""
             />
-          ) : (
-            <FaUserCircle className="cursor-pointer" size={45} />
           )}
           {user?.displayName && (
             <div className="absolute text-center w-[130px] hidden -bottom-8 -left-12 bg-gray-800 text-white px-2 py-1 rounded">
-              {user.displayName}
+              {user?.displayName}
             </div>
           )}
         </div>

@@ -1,5 +1,4 @@
 import { createContext, useEffect, useState } from "react";
-import toast from "react-hot-toast";
 import {
   GithubAuthProvider,
   GoogleAuthProvider,
@@ -8,10 +7,8 @@ import {
   signInWithEmailAndPassword,
   signInWithPopup,
   signOut,
-  updateProfile,
 } from "firebase/auth";
 import { auth } from "../Firebase/firebase.config";
-import { GiToaster } from "react-icons/gi";
 
 export const AuthContext = createContext(null);
 const AuthProvider = ({ children }) => {
@@ -25,23 +22,6 @@ const AuthProvider = ({ children }) => {
     setLoading(true);
     return signInWithEmailAndPassword(auth, email, password);
   };
-  const updateUserProfile = async (name, photoURL) => {
-    try {
-      await updateProfile(auth.currentUser, {
-        displayName: name,
-        photoURL: photoURL,
-      });
-      
-      // Fetch user profile again to get updated information
-      const updatedUser = auth.currentUser;
-      
-      // Update local user state with updated user information
-      setUser(updatedUser);
-    } catch (error) {
-      console.error("Error updating profile: ", error.message);
-    }
-  };
-  
   
 
   useEffect(() => {
@@ -66,13 +46,13 @@ const AuthProvider = ({ children }) => {
   };
   const authValue = {
     user,
+    setLoading,
     createUser,
     signIn,
     logOut,
     loading,
     googleLogin,
     githubLogin,
-    updateUserProfile,
   };
   return (
     <AuthContext.Provider value={authValue}>{children}</AuthContext.Provider>
