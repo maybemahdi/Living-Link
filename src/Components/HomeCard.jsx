@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { Link } from "react-router-dom";
 
 const HomeCard = ({ singleEstate }) => {
@@ -26,25 +27,46 @@ const HomeCard = ({ singleEstate }) => {
           {estate_title}
         </h2>
         <span className="font-semibold text-green-500">{segment_name}</span>
-        <p className="text-gray-600 mt-2 text-sm">{description}</p>
+        {/* <p className="text-gray-600 mt-2 text-sm">{description}</p> */}
         <div className="flex justify-between items-center mt-4">
           <p className="text-gray-700 font-semibold">Price: {price}</p>
-          <p className="text-gray-700 font-semibold text-red-500">Status: {status}</p>
+          <p className="font-semibold text-red-500">Status: {status}</p>
         </div>
-        <div className="flex flex-col justify-between mt-2">
+        {/* <div className="flex flex-col first-letter:justify-between mt-2">
           <p className="text-gray-700">Area: {area}</p>
-          <p className="text-gray-700">Location: {location}</p>
+          <p className="text-gray-700 h-10">Location: {location}</p>
+        </div> */}
+        <div className="flex mt-4 items-center justify-between">
+          <div>
+            <p className="text-gray-600 flex flex-col font-semibold text-lg">
+              Facilities:
+            </p>
+            <ul className="list-disc list-inside text-gray-700">
+              {facilities.map((singleFacilities, idx) => (
+                <li key={idx} className="list-inside list-disc">
+                  {singleFacilities}
+                </li>
+              ))}
+            </ul>
+          </div>
+          {/* <div>
+            <p className="text-gray-600 flex flex-col font-semibold text-lg">
+              Extra Benifits:
+            </p>
+            <ul className="list-disc list-inside text-gray-700">
+              {other_information.map((single, idx) => (
+                <li key={idx} className="list-inside list-disc">
+                  {single}
+                </li>
+              ))}
+            </ul>
+          </div> */}
         </div>
         <div className="mt-4">
-          <p className="text-gray-600 font-semibold text-lg">Facilities:</p>
-          <ul className="list-disc list-inside text-gray-700">
-            {facilities.map((singleFacilities, idx) => (
-              <li className="list-inside list-disc" key={idx}>{singleFacilities}</li>
-            ))}
-          </ul>
-        </div>
-        <div className="mt-4">
-          <Link to={`property-details/${id}`} className="bg-green-500 no-underline cursor-pointer transition-all duration-300 text-white py-2 px-4 rounded hover:bg-black">
+          <Link
+            to={`property-details/${id}`}
+            className="bg-green-500 no-underline cursor-pointer transition-all duration-300 text-white py-2 px-4 rounded hover:bg-black"
+          >
             View Property
           </Link>
         </div>

@@ -10,11 +10,7 @@
     "area": "2,500 sq ft",
     "location": "Suburban neighborhood, Los Angeles",
     "facilities": ["Living room", "Garden", "Garage"],
-    "other_information": {
-      "bedrooms": 3,
-      "bathrooms": 2,
-      "year_built": 2005
-    }
+    "other_information":  ["Wifi", "Cable TV", "Air conditioning"]
   },
   {
     "id": 2,
@@ -27,11 +23,7 @@
     "area": "1,000 sq ft",
     "location": "Downtown, New York City",
     "facilities": ["Living room", "Gym", "Swimming pool"],
-    "other_information": {
-      "bedrooms": 2,
-      "bathrooms": 1,
-      "floor_level": 15
-    }
+    "other_information":  ["Wifi", "Swimming pool", "Air conditioning"]
   },
   {
     "id": 3,
@@ -44,11 +36,7 @@
     "area": "3,000 sq ft",
     "location": "Upscale neighborhood, San Francisco",
     "facilities": ["Living room", "Private garden", "Garage"],
-    "other_information": {
-      "bedrooms": 4,
-      "bathrooms": 3,
-      "hoa_fees": "$300/month"
-    }
+    "other_information":  ["Wifi", "Cable TV", "Gym"]
   },
   {
     "id": 4,
@@ -61,10 +49,7 @@
     "area": "1,200 sq ft",
     "location": "Retirement Village, Miami",
     "facilities": ["Community center", "Fitness center", "Library"],
-    "other_information": {
-      "units_available": 20,
-      "age_requirement": "55+"
-    }
+    "other_information":  ["Wifi", "Air conditioning", "Swimming Pool"]
   },
   {
     "id": 5,
@@ -81,11 +66,7 @@
       "Infinity pool",
       "Outdoor dining area"
     ],
-    "other_information": {
-      "bedrooms": 5,
-      "bathrooms": 4,
-      "amenities": ["Wifi", "Cable TV", "Air conditioning"]
-    }
+    "other_information":  ["Wifi", "Cable TV", "Air conditioning"]
   },
   {
     "id": 6,
@@ -98,10 +79,6 @@
     "area": "700 sq ft",
     "location": "University District, Boston",
     "facilities": ["Study lounge", "Fitness center", "Laundry facilities"],
-    "other_information": {
-      "bedrooms": 1,
-      "bathrooms": 1,
-      "utilities_included": true
-    }
+    "other_information":  ["Wifi", "Gym", "Air conditioning"]
   }
 ]

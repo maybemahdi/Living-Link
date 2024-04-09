@@ -201,7 +201,8 @@ const Home = () => {
       </div>
       <div className="my-10 grid grid-cols-1 md:grid-cols-2 gap-6 lg:grid-cols-3">
         <div className="lg:col-span-3 md:col-span-2 flex flex-col my-5 items-center">
-          <h3>Get Your Perfect Home</h3>
+          <h3 className="text-3xl font-bold">Get Your Perfect Home</h3>
+          <p className="text-center my-5 md:w-[80%]">Discover diverse residential options from cozy single-family homes to luxurious senior living communities. Find your perfect retreat with our comprehensive listings and amenities. Start exploring today!</p>
         </div>
         {estate.map((singleEstate) => (
           <HomeCard key={estate.id} singleEstate={singleEstate} />
