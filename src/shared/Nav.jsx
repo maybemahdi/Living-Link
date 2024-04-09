@@ -101,7 +101,7 @@ const Nav = () => {
         </ul>
       </div>
       <div className="navbar-end gap-4">
-        <div className="relative top-[3px]">
+        <div id="rel" className="relative top-[3px]">
           {/* {console.log(user.photoURL)} */}
           {user?.photoURL && (
             <img

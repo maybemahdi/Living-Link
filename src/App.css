@@ -5,8 +5,9 @@
   list-style: none;
 }
 
-.relative:hover > .absolute {
+#rel:hover > .absolute {
   display: block;
   cursor: pointer;
   transition: .3s ease-in-out all;
 }
+

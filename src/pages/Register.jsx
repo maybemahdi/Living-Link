@@ -5,10 +5,12 @@ import { AuthContext } from "../AuthProvider/AuthProvider";
 import toast from "react-hot-toast";
 import { updateProfile } from "firebase/auth";
 import { auth } from "../Firebase/firebase.config";
+import { useLocation } from 'react-router-dom';
 
 const Register = () => {
   const { createUser } = useContext(AuthContext);
   const [showPassword, setShowPassword] = useState(false);
+  const location = useLocation()
   const navigate = useNavigate();
   const handleFirebaseError = (errorCode) => {
     switch (errorCode) {
@@ -43,13 +45,13 @@ const Register = () => {
         // const user = res.user; // Get the user object from the response
         toast.success("Account created successfully");
 
-        // Wait for user object to become available before updating the profile
         updateProfile(auth.currentUser, {
           displayName: name,
           photoURL: photo,
         })
           .then(() => {
             toast.success("Profile Updated");
+            window.location.reload()
           })
           .catch((err) => console.log(err));
 
