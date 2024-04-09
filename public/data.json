@@ -1,0 +1,107 @@
+[
+  {
+    "id": 1,
+    "segment_name": "Single-family homes",
+    "estate_title": "Cozy Family Home",
+    "image": "https://i.ibb.co/H44bsJx/img-1.jpg",
+    "description": "A charming family home with a spacious living area and beautiful garden.",
+    "price": "$350,000",
+    "status": "sale",
+    "area": "2,500 sq ft",
+    "location": "Suburban neighborhood, Los Angeles",
+    "facilities": ["Living room", "Garden", "Garage"],
+    "other_information": {
+      "bedrooms": 3,
+      "bathrooms": 2,
+      "year_built": 2005
+    }
+  },
+  {
+    "id": 2,
+    "segment_name": "Apartments",
+    "estate_title": "Modern City Apartment",
+    "image": "https://i.ibb.co/KDRmtgK/img-2.jpg",
+    "description": "Stylish apartment with panoramic views of the city skyline.",
+    "price": "$2,500/month",
+    "status": "rent",
+    "area": "1,000 sq ft",
+    "location": "Downtown, New York City",
+    "facilities": ["Living room", "Gym", "Swimming pool"],
+    "other_information": {
+      "bedrooms": 2,
+      "bathrooms": 1,
+      "floor_level": 15
+    }
+  },
+  {
+    "id": 3,
+    "segment_name": "Townhouses",
+    "estate_title": "Luxury Townhouse",
+    "image": "https://i.ibb.co/DD5fP4h/img-3.jpg",
+    "description": "Elegant townhouse with modern amenities and private garden.",
+    "price": "$600,000",
+    "status": "sale",
+    "area": "3,000 sq ft",
+    "location": "Upscale neighborhood, San Francisco",
+    "facilities": ["Living room", "Private garden", "Garage"],
+    "other_information": {
+      "bedrooms": 4,
+      "bathrooms": 3,
+      "hoa_fees": "$300/month"
+    }
+  },
+  {
+    "id": 4,
+    "segment_name": "Senior living communities",
+    "estate_title": "Senior Living Community",
+    "image": "https://i.ibb.co/WVvyM1Z/img-4.jpg",
+    "description": "Retirement community offering independent living with onsite amenities.",
+    "price": "$4,000/month",
+    "status": "rent",
+    "area": "1,200 sq ft",
+    "location": "Retirement Village, Miami",
+    "facilities": ["Community center", "Fitness center", "Library"],
+    "other_information": {
+      "units_available": 20,
+      "age_requirement": "55+"
+    }
+  },
+  {
+    "id": 5,
+    "segment_name": "Vacation rentals",
+    "estate_title": "Beachfront Villa",
+    "image": "https://i.ibb.co/wCC9Bsj/img-5.jpg",
+    "description": "Luxurious villa with stunning ocean views, perfect for a relaxing getaway.",
+    "price": "$500/night",
+    "status": "rent",
+    "area": "2,000 sq ft",
+    "location": "Beachfront, Honolulu",
+    "facilities": [
+      "Private beach access",
+      "Infinity pool",
+      "Outdoor dining area"
+    ],
+    "other_information": {
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "amenities": ["Wifi", "Cable TV", "Air conditioning"]
+    }
+  },
+  {
+    "id": 6,
+    "segment_name": "Student housing",
+    "estate_title": "Modern Student Apartment",
+    "image": "https://i.ibb.co/1v0YVDF/outsite-co-R-LK3sq-Li-Bw-unsplash.jpg",
+    "description": "Comfortable apartment complex tailored for student living, close to campus.",
+    "price": "$800/month",
+    "status": "rent",
+    "area": "700 sq ft",
+    "location": "University District, Boston",
+    "facilities": ["Study lounge", "Fitness center", "Laundry facilities"],
+    "other_information": {
+      "bedrooms": 1,
+      "bathrooms": 1,
+      "utilities_included": true
+    }
+  }
+]

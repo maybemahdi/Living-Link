@@ -1,10 +1,21 @@
+import { useEffect, useState } from "react";
 import img1 from "../assets/img_1.jpg";
 import img2 from "../assets/img_2.jpg";
 import img3 from "../assets/img_3.jpg";
 import img4 from "../assets/img_4.jpg";
 import img5 from "../assets/img_5.jpg";
+import HomeCard from "../Components/HomeCard";
 
 const Home = () => {
+  const [estate, setEstate] = useState([]);
+  useEffect(() => {
+    const fetchData = async () => {
+      const res = await fetch("data.json");
+      const data = await res.json();
+      setEstate(data);
+    };
+    fetchData();
+  }, []);
   return (
     <div>
       <div className="carousel w-full my-5 rounded-lg">
@@ -31,7 +42,7 @@ const Home = () => {
           {/* Dark overlay */}
           <div className="absolute flex justify-between left-5 right-5 top-1/2 transform -translate-y-1/2">
             <a
-              href="#slide4"
+              href="#slide5"
               className="btn bg-white hover:bg-slate-200 btn-circle"
             >
               ❮
@@ -139,13 +150,13 @@ const Home = () => {
           </div>
           <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
             <a
-              href="#slide2"
+              href="#slide3"
               className="btn bg-white hover:bg-slate-200 btn-circle"
             >
               ❮
             </a>
             <a
-              href="#slide4"
+              href="#slide5"
               className="btn bg-white hover:bg-slate-200 btn-circle"
             >
               ❯
@@ -174,19 +185,27 @@ const Home = () => {
           </div>
           <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
             <a
-              href="#slide2"
+              href="#slide4"
               className="btn bg-white hover:bg-slate-200 btn-circle"
             >
               ❮
             </a>
             <a
-              href="#slide4"
+              href="#slide1"
               className="btn bg-white hover:bg-slate-200 btn-circle"
             >
               ❯
             </a>
           </div>
         </div>
+      </div>
+      <div className="my-10 grid grid-cols-1 md:grid-cols-2 gap-6 lg:grid-cols-3">
+        <div className="lg:col-span-3 md:col-span-2 flex flex-col my-5 items-center">
+          <h3>Get Your Perfect Home</h3>
+        </div>
+        {estate.map((singleEstate) => (
+          <HomeCard key={estate.id} singleEstate={singleEstate} />
+        ))}
       </div>
     </div>
   );
