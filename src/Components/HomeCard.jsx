@@ -1,19 +1,14 @@
 /* eslint-disable react/prop-types */
 import { Link } from "react-router-dom";
-
 const HomeCard = ({ singleEstate }) => {
   const {
     id,
     segment_name,
     estate_title,
     image,
-    description,
     price,
     status,
-    area,
-    location,
     facilities,
-    other_information,
   } = singleEstate;
   return (
     <div className="mx-auto w-full bg-white shadow-lg rounded-lg overflow-hidden">
