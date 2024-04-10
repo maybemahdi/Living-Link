@@ -1,13 +1,17 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import img1 from "../assets/img_1.jpg";
 import img2 from "../assets/img_2.jpg";
 import img3 from "../assets/img_3.jpg";
 import img4 from "../assets/img_4.jpg";
 import img5 from "../assets/img_5.jpg";
 import HomeCard from "../Components/HomeCard";
+import { Link } from "react-router-dom";
+import { AuthContext } from "../AuthProvider/AuthProvider";
+import Loader from "../Components/Loader";
 
 const Home = () => {
   const [estate, setEstate] = useState([]);
+  const {loading} = useContext(AuthContext);
   useEffect(() => {
     const fetchData = async () => {
       const res = await fetch("data.json");
@@ -16,6 +20,9 @@ const Home = () => {
     };
     fetchData();
   }, []);
+  if(loading){
+    return <Loader/>;
+  }
   return (
     <div>
       <div className="carousel w-full my-5 rounded-lg">
@@ -34,10 +41,12 @@ const Home = () => {
               more. With a seamless search experience and comprehensive property
               details, finding your next home has never been easier.
             </p>
-            <button className="rounded px-5 font-semibold cursor-pointer py-2.5 overflow-hidden group bg-green-500 relative hover:bg-gradient-to-r hover:from-green-500 hover:to-green-400 text-white hover:ring-2 hover:ring-offset-2 hover:ring-green-400 transition-all ease-out duration-300">
-              <span className="absolute right-0 w-8 h-32 -mt-12 transition-all duration-1000 transform translate-x-12 bg-white opacity-10 rotate-12 group-hover:-translate-x-40 ease"></span>
-              <span className="relative">Get Started</span>
-            </button>
+            <Link to={"/contact"}>
+              <button className="rounded px-5 font-semibold cursor-pointer py-3 overflow-hidden group bg-green-500 relative hover:bg-gradient-to-r hover:from-green-500 hover:bg-black text-white hover:ring-2 hover:ring-offset-2 hover:ring-green-400 transition-all ease-out duration-300">
+                <span className="absolute right-0 w-8 h-32 -mt-12 transition-all duration-1000 transform translate-x-12 bg-white opacity-10 rotate-12 group-hover:-translate-x-40 ease"></span>
+                <span>Contact Us</span>
+              </button>
+            </Link>
           </div>
           {/* Dark overlay */}
           <div className="absolute flex justify-between left-5 right-5 top-1/2 transform -translate-y-1/2">
@@ -70,10 +79,12 @@ const Home = () => {
               more. With a seamless search experience and comprehensive property
               details, finding your next home has never been easier.
             </p>
-            <button className="rounded px-5 font-semibold cursor-pointer py-2.5 overflow-hidden group bg-green-500 relative hover:bg-gradient-to-r hover:from-green-500 hover:to-green-400 text-white hover:ring-2 hover:ring-offset-2 hover:ring-green-400 transition-all ease-out duration-300">
-              <span className="absolute right-0 w-8 h-32 -mt-12 transition-all duration-1000 transform translate-x-12 bg-white opacity-10 rotate-12 group-hover:-translate-x-40 ease"></span>
-              <span className="relative">Get Started</span>
-            </button>
+            <Link to={"/contact"}>
+              <button className="rounded px-5 font-semibold cursor-pointer py-3 overflow-hidden group bg-green-500 relative hover:bg-gradient-to-r hover:from-green-500 hover:bg-black text-white hover:ring-2 hover:ring-offset-2 hover:ring-green-400 transition-all ease-out duration-300">
+                <span className="absolute right-0 w-8 h-32 -mt-12 transition-all duration-1000 transform translate-x-12 bg-white opacity-10 rotate-12 group-hover:-translate-x-40 ease"></span>
+                <span>Contact Us</span>
+              </button>
+            </Link>
           </div>
           <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
             <a
@@ -107,10 +118,12 @@ const Home = () => {
               apartment, or the tranquility of senior living communities, we
               have it all.
             </p>
-            <button className="rounded px-5 font-semibold cursor-pointer py-2.5 overflow-hidden group bg-green-500 relative hover:bg-gradient-to-r hover:from-green-500 hover:to-green-400 text-white hover:ring-2 hover:ring-offset-2 hover:ring-green-400 transition-all ease-out duration-300">
-              <span className="absolute right-0 w-8 h-32 -mt-12 transition-all duration-1000 transform translate-x-12 bg-white opacity-10 rotate-12 group-hover:-translate-x-40 ease"></span>
-              <span className="relative">Get Started</span>
-            </button>
+            <Link to={"/contact"}>
+              <button className="rounded px-5 font-semibold cursor-pointer py-3 overflow-hidden group bg-green-500 relative hover:bg-gradient-to-r hover:from-green-500 hover:bg-black text-white hover:ring-2 hover:ring-offset-2 hover:ring-green-400 transition-all ease-out duration-300">
+                <span className="absolute right-0 w-8 h-32 -mt-12 transition-all duration-1000 transform translate-x-12 bg-white opacity-10 rotate-12 group-hover:-translate-x-40 ease"></span>
+                <span>Contact Us</span>
+              </button>
+            </Link>
           </div>
           <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
             <a
@@ -143,10 +156,12 @@ const Home = () => {
               to stylish townhouses, contemporary apartments to serene senior
               living communities.
             </p>
-            <button className="rounded px-5 font-semibold cursor-pointer py-2.5 overflow-hidden group bg-green-500 relative hover:bg-gradient-to-r hover:from-green-500 hover:to-green-400 text-white hover:ring-2 hover:ring-offset-2 hover:ring-green-400 transition-all ease-out duration-300">
-              <span className="absolute right-0 w-8 h-32 -mt-12 transition-all duration-1000 transform translate-x-12 bg-white opacity-10 rotate-12 group-hover:-translate-x-40 ease"></span>
-              <span className="relative">Get Started</span>
-            </button>
+            <Link to={"/contact"}>
+              <button className="rounded px-5 font-semibold cursor-pointer py-3 overflow-hidden group bg-green-500 relative hover:bg-gradient-to-r hover:from-green-500 hover:bg-black text-white hover:ring-2 hover:ring-offset-2 hover:ring-green-400 transition-all ease-out duration-300">
+                <span className="absolute right-0 w-8 h-32 -mt-12 transition-all duration-1000 transform translate-x-12 bg-white opacity-10 rotate-12 group-hover:-translate-x-40 ease"></span>
+                <span>Contact Us</span>
+              </button>
+            </Link>
           </div>
           <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
             <a
@@ -178,10 +193,12 @@ const Home = () => {
               myriad of residential options tailored to your needs. Whether
               you're searching for a cozy apartment.
             </p>
-            <button className="rounded px-5 font-semibold cursor-pointer py-2.5 overflow-hidden group bg-green-500 relative hover:bg-gradient-to-r hover:from-green-500 hover:to-green-400 text-white hover:ring-2 hover:ring-offset-2 hover:ring-green-400 transition-all ease-out duration-300">
-              <span className="absolute right-0 w-8 h-32 -mt-12 transition-all duration-1000 transform translate-x-12 bg-white opacity-10 rotate-12 group-hover:-translate-x-40 ease"></span>
-              <span className="relative">Get Started</span>
-            </button>
+            <Link to={"/contact"}>
+              <button className="rounded px-5 font-semibold cursor-pointer py-3 overflow-hidden group bg-green-500 relative hover:bg-gradient-to-r hover:from-green-500 hover:bg-black text-white hover:ring-2 hover:ring-offset-2 hover:ring-green-400 transition-all ease-out duration-300">
+                <span className="absolute right-0 w-8 h-32 -mt-12 transition-all duration-1000 transform translate-x-12 bg-white opacity-10 rotate-12 group-hover:-translate-x-40 ease"></span>
+                <span>Contact Us</span>
+              </button>
+            </Link>
           </div>
           <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
             <a
@@ -202,7 +219,12 @@ const Home = () => {
       <div className="my-10 grid grid-cols-1 md:grid-cols-2 gap-6 lg:grid-cols-3">
         <div className="lg:col-span-3 md:col-span-2 flex flex-col my-5 items-center">
           <h3 className="text-3xl font-bold">Get Your Perfect Home</h3>
-          <p className="text-center my-5 md:w-[80%]">Discover diverse residential options from cozy single-family homes to luxurious senior living communities. Find your perfect retreat with our comprehensive listings and amenities. Start exploring today!</p>
+          <p className="text-center my-5 md:w-[80%]">
+            Discover diverse residential options from cozy single-family homes
+            to luxurious senior living communities. Find your perfect retreat
+            with our comprehensive listings and amenities. Start exploring
+            today!
+          </p>
         </div>
         {estate.map((singleEstate) => (
           <HomeCard key={estate.id} singleEstate={singleEstate} />

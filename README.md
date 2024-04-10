@@ -13,3 +13,4 @@
 * Swiper Slider
 * AOS packages
 * Animate CSS 
+* React Spinner

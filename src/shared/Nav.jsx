@@ -45,9 +45,9 @@ const Nav = () => {
               ? "border focus:bg-[#fff] focus:text-[#23BE0A] text-[#23BE0A] border-[#23BE0A] no-underline bg-white"
               : "text-black no-underline"
           }
-          to={"/register"}
+          to={"/update-profile"}
         >
-          Register
+          Update Profile
         </NavLink>
       </li>
     </>
@@ -58,7 +58,7 @@ const Nav = () => {
       .catch((err) => console.log(err));
   };
   return (
-    <div className="navbar my-5 bg-base-100">
+    <div className="navbar p-0 my-5 bg-base-100">
       <div className="navbar-start">
         <div className="dropdown">
           <div

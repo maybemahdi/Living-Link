@@ -6,12 +6,14 @@ import Register from "../pages/Register";
 import PropertyDetails from "../pages/PropertyDetails";
 import Error from "../pages/Error";
 import Contact from "../pages/Contact";
+import UpdateProfile from "../pages/UpdateProfile";
+import PrivateRoute from "./PrivateRoute";
 
 export const router = createBrowserRouter([
   {
     path: "/",
     element: <Layout />,
-    errorElement: <Error/>,
+    errorElement: <Error />,
     children: [
       {
         path: "/",
@@ -27,12 +29,20 @@ export const router = createBrowserRouter([
       },
       {
         path: "/property-details/:id",
-        element: <PropertyDetails/>,
+        element: <PrivateRoute><PropertyDetails /></PrivateRoute>,
         loader: () => fetch("../data.json"),
       },
       {
         path: "/contact",
-        element: <Contact/>,
+        element: <Contact />,
+      },
+      {
+        path: "/update-profile",
+        element: (
+          <PrivateRoute>
+            <UpdateProfile />
+          </PrivateRoute>
+        ),
       },
     ],
   },

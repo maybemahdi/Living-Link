@@ -74,7 +74,7 @@ const Login = () => {
             <input
               type="email"
               ref={emailRef}
-              className="block border border-grey-light w-full p-3 rounded mb-4"
+              className="block border bg-gray-100 border-grey-light w-full p-3 rounded mb-4"
               name="email"
               placeholder="Email"
               required
@@ -83,7 +83,7 @@ const Login = () => {
             <div className="relative flex">
               <input
                 type={showPassword ? "text" : "password"}
-                className="block border border-grey-light w-full p-3 rounded mb-4"
+                className="block border bg-gray-100 border-grey-light w-full p-3 rounded mb-4"
                 name="password"
                 placeholder="Password"
                 required

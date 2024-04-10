@@ -1,7 +1,11 @@
+import { useContext } from "react";
 import { useParams, useLoaderData, Link } from "react-router-dom";
+import { AuthContext } from "../AuthProvider/AuthProvider";
+import Loader from "../Components/Loader";
 
 const PropertyDetails = () => {
   const estates = useLoaderData();
+  const {loading} = useContext(AuthContext);
   const { id } = useParams();
   const selected = estates.find((single) => single.id == id);
   const {
@@ -16,6 +20,9 @@ const PropertyDetails = () => {
     facilities,
     other_information,
   } = selected;
+  if(loading){
+    return <Loader/>;
+  }
   return (
     <div>
       <section className="relative dark:bg-gray-100 rounded-md dark:text-gray-800">

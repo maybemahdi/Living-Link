@@ -5,12 +5,10 @@ import { AuthContext } from "../AuthProvider/AuthProvider";
 import toast from "react-hot-toast";
 import { updateProfile } from "firebase/auth";
 import { auth } from "../Firebase/firebase.config";
-import { useLocation } from 'react-router-dom';
 
 const Register = () => {
   const { createUser } = useContext(AuthContext);
   const [showPassword, setShowPassword] = useState(false);
-  const location = useLocation()
   const navigate = useNavigate();
   const handleFirebaseError = (errorCode) => {
     switch (errorCode) {
@@ -51,7 +49,7 @@ const Register = () => {
         })
           .then(() => {
             toast.success("Profile Updated");
-            window.location.reload()
+            window.location.reload();
           })
           .catch((err) => console.log(err));
 
@@ -73,21 +71,21 @@ const Register = () => {
             <form onSubmit={handleSubmit}>
               <input
                 type="text"
-                className="block border border-grey-light w-full p-3 rounded mb-4"
+                className="block bg-gray-100 border border-grey-light w-full p-3 rounded mb-4"
                 name="name"
                 placeholder="Full Name"
                 required
               />
               <input
                 type="email"
-                className="block border border-grey-light w-full p-3 rounded mb-4"
+                className="block bg-gray-100 border border-grey-light w-full p-3 rounded mb-4"
                 name="email"
                 placeholder="Email"
                 required
               />
               <input
                 type="text"
-                className="block border border-grey-light w-full p-3 rounded mb-4"
+                className="block bg-gray-100 border border-grey-light w-full p-3 rounded mb-4"
                 name="photoURL"
                 placeholder="Your Photo URL"
               />
@@ -95,7 +93,7 @@ const Register = () => {
               <div className="relative flex">
                 <input
                   type={showPassword ? "text" : "password"}
-                  className="block border border-grey-light w-full p-3 rounded mb-4"
+                  className="block bg-gray-100 border border-grey-light w-full p-3 rounded mb-4"
                   name="password"
                   placeholder="Password"
                   required
