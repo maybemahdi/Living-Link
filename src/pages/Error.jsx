@@ -1,15 +1,14 @@
 import { Link } from "react-router-dom";
 import "../shared/style.css";
-// import "../shared/script.js";
 const Error = () => {
   return (
-    <div className="h-[80vh] err-body">
-      <Link to={"/"}>
-        <button className="bg-green-500 text-white font-semibold cursor-pointer py-3 px-4 rounded-md mt-5 w-fit mx-[45%] hover:bg-black">
+    <div className="h-screen err-body py-5">
+      <Link to={"/"} className="no-underline">
+        <button className="bg-green-500 text-white font-semibold cursor-pointer py-3 px-4 rounded-md w-fit mx-auto flex items-center justify-center hover:bg-black">
           Go Home
         </button>
       </Link>
-      <div target="_blank" href="https://codepen.io/uiswarup/pen/XWGGyWQ">
+      <div className="err-body">
         <div className="container err-body">
           <div className="row">
             <div className="col-sm-12 col-md-12 mt-5 mb-5">
