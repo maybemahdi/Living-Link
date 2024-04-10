@@ -5,7 +5,7 @@ import toast from "react-hot-toast";
 import "../App.css";
 
 const Nav = () => {
-  const { user, logOut} = useContext(AuthContext);
+  const { user, logOut } = useContext(AuthContext);
   const navLinks = (
     <>
       <li>
@@ -31,9 +31,9 @@ const Nav = () => {
               ? "border focus:bg-[#fff] focus:text-[#23BE0A] text-[#23BE0A] border-[#23BE0A] no-underline bg-white"
               : "text-black no-underline"
           }
-          to={"/login"}
+          to={"/contact"}
         >
-          Login
+          Contact Us
         </NavLink>
       </li>
       <li>

@@ -5,6 +5,7 @@ import Login from "../pages/Login";
 import Register from "../pages/Register";
 import PropertyDetails from "../pages/PropertyDetails";
 import Error from "../pages/Error";
+import Contact from "../pages/Contact";
 
 export const router = createBrowserRouter([
   {
@@ -28,6 +29,10 @@ export const router = createBrowserRouter([
         path: "/property-details/:id",
         element: <PropertyDetails/>,
         loader: () => fetch("../data.json"),
+      },
+      {
+        path: "/contact",
+        element: <Contact/>,
       },
     ],
   },
