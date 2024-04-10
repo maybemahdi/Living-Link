@@ -3,6 +3,11 @@ import { useParams, useLoaderData, Link } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import Loader from "../Components/Loader";
 import { Helmet } from "react-helmet-async";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+AOS.init({
+  duration: 1200,
+});
 
 const PropertyDetails = () => {
   const estates = useLoaderData();
@@ -30,7 +35,7 @@ const PropertyDetails = () => {
         <title>Living-Link | Property-Details</title>
       </Helmet>
       <section className="relative dark:bg-gray-100 rounded-md dark:text-gray-800">
-        <div className="w-full rounded-md h-full">
+        <div data-aos="fade-right" className="w-full rounded-md h-full">
           <img
             className="w-full h-[380px] md:h-[570px] rounded-t-md"
             src={image}
@@ -38,24 +43,24 @@ const PropertyDetails = () => {
           />
         </div>
         <div className="flex flex-col px-4 py-16 md:py-32 md:px-10 lg:px-32">
-          <h1 className="text-4xl font-bold leading-[50px] sm:text-5xl">
+          <h1 data-aos="zoom-in-right" className="text-4xl font-bold leading-[50px] sm:text-5xl">
             {estate_title}
           </h1>
-          <span className="font-semibold mt-5 text-xl text-green-500">
+          <span data-aos="zoom-in-right" className="font-semibold mt-5 text-xl text-green-500">
             {segment_name}
           </span>
-          <p className="mt-4 mb-4 text-lg">{description}</p>
-          <div className="flex flex-col justify-between mt-4">
+          <p data-aos="zoom-in-right" className="mt-4 mb-4 text-lg">{description}</p>
+          <div data-aos="zoom-in-right" className="flex flex-col justify-between mt-4">
             <p className="text-gray-700 text-xl font-semibold">
               Price: {price}
             </p>
             <p className="font-semibold text-red-500">Status: {status}</p>
           </div>
-          <div className="flex flex-col text-xl first-letter:justify-between mt-2">
+          <div data-aos="zoom-in-right" className="flex flex-col text-xl first-letter:justify-between mt-2">
             <p className="text-gray-700">Area: {area}</p>
             <p className="text-gray-700 h-10">Location: {location}</p>
           </div>
-          <div className="flex gap-10 flex-col mt-8 justify-between">
+          <div data-aos="zoom-in-right" className="flex gap-10 flex-col mt-8 justify-between">
             <div>
               <p className="text-gray-600 flex flex-col font-semibold text-[30px]">
                 Facilities:
@@ -68,7 +73,7 @@ const PropertyDetails = () => {
                 ))}
               </ul>
             </div>
-            <div>
+            <div data-aos="zoom-in-right">
               <p className="text-gray-600 flex flex-col font-semibold text-[30px]">
                 Extra Benifits:
               </p>
@@ -81,7 +86,7 @@ const PropertyDetails = () => {
               </ul>
             </div>
           </div>
-          <div className="mt-10">
+          <div data-aos="zoom-in-right" className="mt-10">
             <Link
               to={"/"}
               className=" bg-green-500 no-underline cursor-pointer transition-all duration-300 text-white py-3 px-4 rounded hover:bg-black"

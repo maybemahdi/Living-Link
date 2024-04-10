@@ -1,6 +1,11 @@
 import { useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+AOS.init({
+  duration: 1200,
+});
 
 const Contact = () => {
   const [name, setName] = useState(null);
@@ -11,7 +16,7 @@ const Contact = () => {
     setName(name);
   };
   return (
-    <div>
+    <div data-aos="fade-left">
         <Helmet>
         <title>Living-Link | Contact</title>
       </Helmet>

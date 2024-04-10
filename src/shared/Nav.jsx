@@ -3,7 +3,11 @@ import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import toast from "react-hot-toast";
 import "../App.css";
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+AOS.init({
+  duration: 1200,
+});
 const Nav = () => {
   const { user, logOut } = useContext(AuthContext);
   const navLinks = (
@@ -58,7 +62,7 @@ const Nav = () => {
       .catch((err) => console.log(err));
   };
   return (
-    <div className="navbar p-0 my-5 bg-base-100">
+    <div data-aos="fade-left" className="navbar p-0 my-5 bg-base-100">
       <div className="navbar-start">
         <div className="dropdown">
           <div

@@ -9,6 +9,11 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import Loader from "../Components/Loader";
 import { Helmet } from "react-helmet-async";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+AOS.init({
+  duration: 1200,
+});
 
 const Home = () => {
   const [estate, setEstate] = useState([]);
@@ -29,7 +34,7 @@ const Home = () => {
       <Helmet>
         <title>Living-Link | Home</title>
       </Helmet>
-      <div className="carousel w-full my-5 rounded-lg">
+      <div data-aos="fade-right" className="carousel w-full my-5 rounded-lg">
         <div id="slide1" className="carousel-item relative w-full">
           <img src={img1} className="w-full h-[560px]" />
           <div className="absolute inset-0 bg-black opacity-50"></div>
@@ -222,8 +227,8 @@ const Home = () => {
       </div>
       <div className="my-10 grid grid-cols-1 md:grid-cols-2 gap-6 lg:grid-cols-3">
         <div className="lg:col-span-3 md:col-span-2 flex flex-col my-5 items-center">
-          <h3 className="text-3xl font-bold">Get Your Perfect Home</h3>
-          <p className="text-center my-5 md:w-[80%]">
+          <h3 data-aos="zoom-in-right" className="text-3xl font-bold">Get Your Perfect Home</h3>
+          <p data-aos="zoom-out-right" className="text-center my-5 md:w-[80%]">
             Discover diverse residential options from cozy single-family homes
             to luxurious senior living communities. Find your perfect retreat
             with our comprehensive listings and amenities. Start exploring
