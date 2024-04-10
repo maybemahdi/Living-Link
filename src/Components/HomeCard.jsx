@@ -16,7 +16,7 @@ const HomeCard = ({ singleEstate }) => {
     facilities,
   } = singleEstate;
   return (
-    <div data-aos="zoom-in-right" className="mx-auto w-full bg-white shadow-lg rounded-lg overflow-hidden">
+    <div data-aos="zoom-in-left" className="mx-auto w-full bg-white shadow-lg rounded-lg overflow-hidden">
       <img
         className="w-full h-48 object-cover object-center"
         src={image}

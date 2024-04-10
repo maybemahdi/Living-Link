@@ -30,7 +30,7 @@ const PropertyDetails = () => {
     return <Loader/>;
   }
   return (
-    <div>
+    <div className="mt-10">
       <Helmet>
         <title>Living-Link | Property-Details</title>
       </Helmet>
