@@ -4,6 +4,7 @@ import { Link, useNavigate, useLocation } from "react-router-dom";
 import { FaGithub, FaGoogle, FaRegEye, FaRegEyeSlash } from "react-icons/fa"; // Import Eye icons
 import toast from "react-hot-toast";
 import "../App.css";
+import { Helmet } from "react-helmet-async";
 
 const Login = () => {
   const { signIn, googleLogin, githubLogin } = useContext(AuthContext);
@@ -67,6 +68,9 @@ const Login = () => {
 
   return (
     <div className="bg-grey-lighter min-h-[80vh] flex flex-col">
+      <Helmet>
+        <title>Living-Link | Login</title>
+      </Helmet>
       <div className="container max-w-md mx-auto flex-1 flex flex-col items-center justify-center px-2">
         <div className="bg-white px-6 py-4 rounded shadow-xl text-black w-full">
           <h1 className="mb-8 text-3xl text-center">Log in</h1>

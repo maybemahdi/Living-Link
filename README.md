@@ -14,3 +14,4 @@
 * AOS packages
 * Animate CSS 
 * React Spinner
+* React Helmet async

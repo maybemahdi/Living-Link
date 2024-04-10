@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { useParams, useLoaderData, Link } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import Loader from "../Components/Loader";
+import { Helmet } from "react-helmet-async";
 
 const PropertyDetails = () => {
   const estates = useLoaderData();
@@ -25,6 +26,9 @@ const PropertyDetails = () => {
   }
   return (
     <div>
+      <Helmet>
+        <title>Living-Link | Property-Details</title>
+      </Helmet>
       <section className="relative dark:bg-gray-100 rounded-md dark:text-gray-800">
         <div className="w-full rounded-md h-full">
           <img

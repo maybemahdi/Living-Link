@@ -5,6 +5,7 @@ import { AuthContext } from "../AuthProvider/AuthProvider";
 import toast from "react-hot-toast";
 import { updateProfile } from "firebase/auth";
 import { auth } from "../Firebase/firebase.config";
+import { Helmet } from "react-helmet-async";
 
 const Register = () => {
   const { createUser } = useContext(AuthContext);
@@ -64,6 +65,9 @@ const Register = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>Living-Link | Register</title>
+      </Helmet>
       <div className="bg-grey-lighter min-h-[80vh] flex flex-col">
         <div className="container max-w-md mx-auto flex-1 flex flex-col items-center justify-center px-2">
           <div className="bg-white px-6 py-4 rounded shadow-xl text-black w-full">

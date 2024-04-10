@@ -8,6 +8,7 @@ import HomeCard from "../Components/HomeCard";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import Loader from "../Components/Loader";
+import { Helmet } from "react-helmet-async";
 
 const Home = () => {
   const [estate, setEstate] = useState([]);
@@ -25,6 +26,9 @@ const Home = () => {
   }
   return (
     <div>
+      <Helmet>
+        <title>Living-Link | Home</title>
+      </Helmet>
       <div className="carousel w-full my-5 rounded-lg">
         <div id="slide1" className="carousel-item relative w-full">
           <img src={img1} className="w-full h-[560px]" />

@@ -1,8 +1,12 @@
 import { Link } from "react-router-dom";
 import "../shared/style.css";
+import { Helmet } from "react-helmet-async";
 const Error = () => {
   return (
     <div className="h-screen err-body py-5">
+      <Helmet>
+        <title>Living-Link | Error</title>
+      </Helmet>
       <Link to={"/"} className="no-underline">
         <button className="bg-green-500 text-white font-semibold cursor-pointer py-3 px-4 rounded-md w-fit mx-auto flex items-center justify-center hover:bg-black">
           Go Home
