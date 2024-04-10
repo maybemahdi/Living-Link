@@ -6,6 +6,7 @@ import toast from "react-hot-toast";
 import { updateProfile } from "firebase/auth";
 import { auth } from "../Firebase/firebase.config";
 import { Helmet } from "react-helmet-async";
+import "animate.css";
 
 const Register = () => {
   const { createUser } = useContext(AuthContext);
@@ -15,7 +16,6 @@ const Register = () => {
     switch (errorCode) {
       case "Firebase: Error (auth/email-already-in-use).":
         return "The Email You provided is already registered in our Database.";
-      // Add more cases for other error codes as needed
       default:
         return "An error occurred. Please try again later.";
     }
@@ -53,14 +53,13 @@ const Register = () => {
             window.location.reload();
           })
           .catch((err) => console.log(err));
-
-        navigate("/");
       })
       .catch((err) => {
         const errorMessage = handleFirebaseError(err.message);
         console.log(err.message);
         toast.error(errorMessage);
       });
+    navigate("/");
   };
 
   return (
@@ -71,8 +70,10 @@ const Register = () => {
       <div className="bg-grey-lighter min-h-[80vh] flex flex-col">
         <div className="container max-w-md mx-auto flex-1 flex flex-col items-center justify-center px-2">
           <div className="bg-white px-6 py-4 rounded shadow-xl text-black w-full">
-            <h1 className="mb-8 text-3xl text-center">Sign up</h1>
-            <form onSubmit={handleSubmit}>
+            <h1 data-aos="zoom-in" className="mb-8 text-3xl text-center">
+              Sign up
+            </h1>
+            <form data-aos="zoom-in-right" onSubmit={handleSubmit}>
               <input
                 type="text"
                 className="block bg-gray-100 border border-grey-light w-full p-3 rounded mb-4"
@@ -118,19 +119,19 @@ const Register = () => {
                   name="terms"
                   required
                 />
-                <label htmlFor="terms">
+                <label data-aos="zoom-in-left" htmlFor="terms">
                   Accept with our terms and condition?
                 </label>
               </div>
 
               <button
                 type="submit"
-                className="w-full text-center py-3 rounded border-0 cursor-pointer bg-black text-white font-semibold hover:bg-green-dark my-1"
+                className="animate__animated animate__fadeInDown w-full text-center py-3 rounded border-0 cursor-pointer bg-black text-white font-semibold hover:bg-green-dark my-1"
               >
                 Create Account
               </button>
             </form>
-            <div className="text-center text-sm text-grey-dark mt-4">
+            <div className="animate__animated animate__fadeInUp text-center text-sm text-grey-dark mt-4">
               By signing up, you agree to the
               <a
                 className="no-underline ml-1 border-b border-grey-dark text-grey-dark"
@@ -148,7 +149,7 @@ const Register = () => {
             </div>
           </div>
 
-          <div className="text-grey-dark mt-6">
+          <div className="animate__animated animate__fadeInDown text-grey-dark mt-6">
             Already have an account?
             <Link
               to={"/login"}

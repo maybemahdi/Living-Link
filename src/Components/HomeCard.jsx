@@ -1,22 +1,18 @@
 /* eslint-disable react/prop-types */
 import { Link } from "react-router-dom";
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+import AOS from "aos";
+import "aos/dist/aos.css";
 AOS.init({
-  duration: 1200,
+  duration: 1000,
 });
 const HomeCard = ({ singleEstate }) => {
-  const {
-    id,
-    segment_name,
-    estate_title,
-    image,
-    price,
-    status,
-    facilities,
-  } = singleEstate;
+  const { id, segment_name, estate_title, image, price, status, facilities } =
+    singleEstate;
   return (
-    <div data-aos="zoom-in-left" className="mx-auto w-full bg-white shadow-lg rounded-lg overflow-hidden">
+    <div
+      data-aos="zoom-in-left"
+      className="mx-auto w-full bg-white shadow-lg rounded-lg overflow-hidden"
+    >
       <img
         className="w-full h-48 object-cover object-center"
         src={image}

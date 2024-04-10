@@ -5,6 +5,11 @@ import { FaGithub, FaGoogle, FaRegEye, FaRegEyeSlash } from "react-icons/fa"; //
 import toast from "react-hot-toast";
 import "../App.css";
 import { Helmet } from "react-helmet-async";
+import AOS from "aos";
+import "aos/dist/aos.css";
+AOS.init({
+  duration: 1000,
+});
 
 const Login = () => {
   const { signIn, googleLogin, githubLogin } = useContext(AuthContext);
@@ -43,6 +48,7 @@ const Login = () => {
       .then((res) => {
         console.log(res);
         toast.success("Logged in successfully");
+        navigate(location.state ? location.state : "/");
       })
       .catch((err) => console.log(err));
   };
@@ -51,9 +57,9 @@ const Login = () => {
       .then((res) => {
         console.log(res);
         toast.success("Logged in successfully");
+        navigate(location.state ? location.state : "/");
       })
       .catch((error) => {
-        setLoading(false);
         // Check if the error is due to invalid credentials
         if (error.code === "auth/invalid-credential") {
           // Display toast for wrong password
@@ -73,8 +79,8 @@ const Login = () => {
       </Helmet>
       <div className="container max-w-md mx-auto flex-1 flex flex-col items-center justify-center px-2">
         <div className="bg-white px-6 py-4 rounded shadow-xl text-black w-full">
-          <h1 className="mb-8 text-3xl text-center">Log in</h1>
-          <form onSubmit={handleLogin}>
+          <h1 data-aos="zoom-in" className="mb-8 text-3xl text-center">Log in</h1>
+          <form data-aos="zoom-in-right" onSubmit={handleLogin}>
             <input
               type="email"
               ref={emailRef}
@@ -108,6 +114,7 @@ const Login = () => {
           </form>
           <div className="flex justify-center gap-5 items-center my-5">
             <button
+            data-aos="zoom-in-up"
               onClick={loginWithGoogle}
               className="inline-flex overflow-hidden cursor-pointer text-white bg-gray-900 rounded group"
             >
@@ -117,6 +124,7 @@ const Login = () => {
               <span className="pl-4 pr-5 py-2.5">Google</span>
             </button>
             <button
+            data-aos="zoom-in-down"
               onClick={loginWithGithub}
               className="inline-flex overflow-hidden cursor-pointer text-white bg-gray-900 rounded group"
             >
@@ -127,7 +135,7 @@ const Login = () => {
             </button>
           </div>
         </div>
-        <div className="text-grey-dark mt-6">
+        <div data-aos="zoom-in" className="text-grey-dark mt-6">
           New to our Website?
           <Link
             to={"/register"}

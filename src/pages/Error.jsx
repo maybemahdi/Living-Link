@@ -692,28 +692,18 @@ const Error = () => {
                         opacity="0.25"
                         d="M81.5 204.9C81.5 204.9 81.3 208.6 81.8 209.6C82.3 210.6 83.7 211.3 83.7 211.3C83.7 211.3 85.5 210.5 86 209.4C86.5 207.2 86.4 204.5 86.4 204.5C86.4 204.5 82.8 203.7 81.5 204.9Z"
                         stroke="white"
-                        stroke-width="0.4635"
-                        stroke-miterlimit="10"
                       />
                       <path
                         id="Vector_111"
                         opacity="0.25"
                         d="M97.2 201.9C97.2 201.9 97.4 205 94.7 206.5"
                         stroke="white"
-                        stroke-width="0.4635"
-                        stroke-miterlimit="10"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
                       />
                       <path
                         id="Vector_112"
                         opacity="0.25"
                         d="M96.5 204.6L98.7 241.6"
                         stroke="white"
-                        stroke-width="0.4635"
-                        stroke-miterlimit="10"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
                       />
                       <path
                         id="Vector_113"
@@ -726,10 +716,6 @@ const Error = () => {
                         opacity="0.25"
                         d="M87.4 213L84.3 243.2"
                         stroke="white"
-                        stroke-width="0.4635"
-                        stroke-miterlimit="10"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
                       />
                       <path
                         id="Vector_115"
@@ -796,8 +782,6 @@ const Error = () => {
                       id="Vector_125"
                       d="M523.5 247.4C523.5 247.4 521.5 234.8 531.8 226.1C531.7 236.3 528.9 245 523.5 247.4Z"
                       stroke="#1F3247"
-                      stroke-width="0.9271"
-                      stroke-miterlimit="10"
                     />
                     <g id="Group_26">
                       <path
@@ -889,8 +873,6 @@ const Error = () => {
                       id="Vector_139"
                       d="M174.2 250.2C174.2 250.2 161.8 247.6 154.1 238.3C167.3 239.7 173 244.4 174.2 250.2Z"
                       stroke="#1F3247"
-                      stroke-width="0.9271"
-                      stroke-miterlimit="10"
                     />
                     <g id="Group_33">
                       <path

@@ -1,15 +1,16 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import toast from "react-hot-toast";
 import "../App.css";
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+import AOS from "aos";
+import "aos/dist/aos.css";
+import Loader from "../Components/Loader";
 AOS.init({
-  duration: 1200,
+  duration: 1000,
 });
 const Nav = () => {
-  const { user, logOut } = useContext(AuthContext);
+  const { user, logOut, loading } = useContext(AuthContext);
   const navLinks = (
     <>
       <li>
@@ -68,11 +69,11 @@ const Nav = () => {
           <div
             tabIndex={0}
             role="button"
-            className="btn -ml-8 btn-ghost lg:hidden"
+            className="btn -ml-5 btn-ghost lg:hidden"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-8 w-8"
+              className="h-7 w-7"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -94,7 +95,7 @@ const Nav = () => {
         </div>
         <Link
           to={"/"}
-          className="font-bold no-underline text-green-500 text-2xl"
+          className="font-bold no-underline text-green-500 text-[18px] md:text-2xl"
         >
           Living-Link
         </Link>

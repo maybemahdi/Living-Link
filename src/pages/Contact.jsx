@@ -1,11 +1,12 @@
 import { useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+import AOS from "aos";
+import "aos/dist/aos.css";
 AOS.init({
-  duration: 1200,
+  duration: 1000,
 });
+import "animate.css";
 
 const Contact = () => {
   const [name, setName] = useState(null);
@@ -17,16 +18,16 @@ const Contact = () => {
   };
   return (
     <div data-aos="fade-left">
-        <Helmet>
+      <Helmet>
         <title>Living-Link | Contact</title>
       </Helmet>
       <div className="grid max-w-screen-xl mt-10 grid-cols-1 gap-8 px-8 py-16 mx-auto rounded-lg md:grid-cols-2 md:px-12 lg:px-16 xl:px-32 dark:bg-[#c5c3c3] dark:text-gray-800">
         <div className="flex flex-col justify-between">
           <div className="space-y-2">
-            <h2 className="text-4xl text-black font-bold leading-tight lg:text-5xl">
+            <h2 className="animate__animated animate__fadeInDown text-4xl text-black font-bold leading-tight lg:text-5xl">
               Let's talk!
             </h2>
-            <div className="text-[#111]">
+            <div className="animate__animated animate__fadeInUp animate__delay-.5s text-[#111]">
               Want to know more info or support from us? <br /> Don't Hesitate
               to Contact.
             </div>
@@ -34,12 +35,15 @@ const Contact = () => {
           <img
             src="https://mambaui.com/assets/svg/doodle.svg"
             alt=""
-            className="p-6 h-52 md:h-64"
+            className="animate__animated animate__bounceIn animate__delay-.8s p-6 h-52 md:h-64"
           />
         </div>
-        <form onSubmit={handleSubmit} className="space-y-6">
+        <form data-aos="zoom-in" onSubmit={handleSubmit} className="space-y-6">
           <div>
-            <label htmlFor="name" className="text-sm">
+            <label
+              htmlFor="name"
+              className="text-sm"
+            >
               Full name
             </label>
             <input

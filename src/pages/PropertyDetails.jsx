@@ -6,7 +6,7 @@ import { Helmet } from "react-helmet-async";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 AOS.init({
-  duration: 1200,
+  duration: 1000,
 });
 
 const PropertyDetails = () => {

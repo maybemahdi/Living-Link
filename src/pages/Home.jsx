@@ -12,7 +12,7 @@ import { Helmet } from "react-helmet-async";
 import AOS from "aos";
 import "aos/dist/aos.css";
 AOS.init({
-  duration: 1200,
+  duration: 1000,
 });
 
 const Home = () => {
@@ -119,7 +119,10 @@ const Home = () => {
         <div id="slide3" className="carousel-item relative w-full">
           <img src={img3} className="w-full h-[560px]" />
           <div className="absolute inset-0 bg-black opacity-50"></div>
-          <div data-aos="zoom-in" className="flex absolute flex-col space-y-6 justify-center my-36 items-center text-white">
+          <div
+            data-aos="zoom-in"
+            className="flex absolute flex-col space-y-6 justify-center my-36 items-center text-white"
+          >
             <h3 className="lg:text-6xl text-4xl text-center font-black text-green-500">
               Welcome to Your Next Home
             </h3>
@@ -158,7 +161,10 @@ const Home = () => {
         <div id="slide4" className="carousel-item relative w-full">
           <img src={img4} className="w-full h-[560px]" />
           <div className="absolute inset-0 bg-black opacity-50"></div>
-          <div data-aos="zoom-in" className="flex absolute flex-col space-y-6 justify-center my-36 items-center text-white">
+          <div
+            data-aos="zoom-in"
+            className="flex absolute flex-col space-y-6 justify-center my-36 items-center text-white"
+          >
             <h3 className="lg:text-6xl text-4xl text-center font-black text-green-500">
               Welcome to Your Next Home
             </h3>
@@ -196,7 +202,10 @@ const Home = () => {
         <div id="slide5" className="carousel-item relative w-full">
           <img src={img5} className="w-full h-[560px]" />
           <div className="absolute inset-0 bg-black opacity-50"></div>
-          <div data-aos="zoom-in" className="flex absolute flex-col space-y-6 justify-center my-36 items-center text-white">
+          <div
+            data-aos="zoom-in"
+            className="flex absolute flex-col space-y-6 justify-center my-36 items-center text-white"
+          >
             <h3 className="lg:text-6xl text-4xl text-center font-black text-green-500">
               Welcome to Your Next Home
             </h3>
@@ -243,8 +252,8 @@ const Home = () => {
             today!
           </p>
         </div>
-        {estate.map((singleEstate) => (
-          <HomeCard key={estate.id} singleEstate={singleEstate} />
+        {estate.map((singleEstate, idx) => (
+          <HomeCard key={idx} singleEstate={singleEstate} />
         ))}
       </div>
     </div>
