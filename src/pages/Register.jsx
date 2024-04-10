@@ -53,13 +53,13 @@ const Register = () => {
             window.location.reload();
           })
           .catch((err) => console.log(err));
+        navigate("/");
       })
       .catch((err) => {
         const errorMessage = handleFirebaseError(err.message);
         console.log(err.message);
         toast.error(errorMessage);
       });
-    navigate("/");
   };
 
   return (
