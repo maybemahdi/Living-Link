@@ -62,19 +62,24 @@ const Nav = () => {
       .catch((err) => console.log(err));
   };
   const [openNav, setOpenNav] = useState(false);
-  const [openAvatarDropdown, setOpenAvatarDropdown] = useState(false);
 
   const toggleNav = () => {
     setOpenNav(!openNav);
-    setOpenAvatarDropdown(false);
+    document.getElementById("mainDiv").removeAttribute("data-aos")
   };
 
-  const toggleAvatarDropdown = () => {
-    setOpenAvatarDropdown(!openAvatarDropdown);
-  };
+  // const toggleAvatarDropdown = () => {
+  //   setOpenAvatarDropdown(!openAvatarDropdown);
+  // };
   return (
-    <div  className={`navbar transition-all duration-500 p-0 my-5 bg-base-100 ${openNav ? 'mb-[140px]': ""}`}>
-      <div className="navbar-start relative">
+    <div
+    id="mainDiv"
+      data-aos="zoom-in"
+      className={`navbar transition-all duration-500 p-0 my-5 bg-base-100 ${
+        openNav ? "mb-[140px]" : ""
+      }`}
+    >
+      <div className={`navbar-start relative ${openNav ? "mb-5": ""}`}>
         {/* <div className="dropdown">
           <div
             tabIndex={0}
@@ -105,7 +110,7 @@ const Nav = () => {
         </div> */}
         <button
           onClick={toggleNav}
-          className="block md:hidden mr-3 border bg-white border-gray-600 p-2 rounded text-gray-600 hover:bg-gray-200 focus:outline-none"
+          className="block md:hidden -ml-2 mr-3 border bg-white border-gray-600 p-2 rounded text-gray-600 hover:bg-gray-200 focus:outline-none"
         >
           <svg
             className={`w-7 h-7 ${openNav ? "hidden" : "block"}`}
@@ -139,11 +144,13 @@ const Nav = () => {
         <div
           className={`${
             openNav ? "" : "hidden"
-          } mt-4 bg-slate-200 w-full absolute top-12 flex flex-col gap-4 p-2 rounded-md`}
+          } mt-4 bg-slate-200 w-full absolute top-10 flex flex-col gap-4 p-2 rounded-md`}
         >
-          <ul className="menu">{navLinks}</ul>
+          <ul className="menu">
+            {navLinks}
+          </ul>
         </div>
-
+{/* 
         <div
           onClick={toggleAvatarDropdown}
           className="relative transition-all duration-500"
@@ -158,7 +165,7 @@ const Nav = () => {
               <NavLink to="/dashboard">Dashboard</NavLink>
             </div>
           </div>
-        </div>
+        </div> */}
         <Link
           to={"/"}
           className="font-bold no-underline text-green-500 text-[18px] md:text-2xl"

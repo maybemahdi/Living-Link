@@ -34,10 +34,10 @@ const Home = () => {
       <Helmet>
         <title>Living-Link | Home</title>
       </Helmet>
-      <div data-aos="fade-right" className="carousel w-full mt-5 md:my-5 rounded-lg">
+      <div data-aos="fade-right" className="carousel w-full mb-5 rounded-lg">
         <div id="slide1" className="carousel-item relative w-full">
-          <img src="https://i.ibb.co/H44bsJx/img-1.jpg" className="w-full h-[560px]" />
-          <div className="absolute inset-0 bg-black opacity-50"></div>
+          <img src="https://i.ibb.co/H44bsJx/img-1.jpg" className="w-full rounded-lg h-[560px]" />
+          <div className="absolute rounded-lg inset-0 bg-black opacity-50"></div>
           <div
             data-aos="zoom-in"
             className="flex absolute flex-col space-y-6 justify-center my-36 items-center text-white"
@@ -77,8 +77,8 @@ const Home = () => {
           </div>
         </div>
         <div id="slide2" className="carousel-item relative w-full">
-          <img src="https://i.ibb.co/KDRmtgK/img-2.jpg" className="w-full h-[560px]" />
-          <div className="absolute inset-0 bg-black opacity-50"></div>
+          <img src="https://i.ibb.co/KDRmtgK/img-2.jpg" className="w-full rounded-lg h-[560px]" />
+          <div className="absolute rounded-lg inset-0 bg-black opacity-50"></div>
           <div
             data-aos="zoom-in"
             className="flex absolute flex-col space-y-6 justify-center my-36 items-center text-white"
@@ -117,8 +117,8 @@ const Home = () => {
           </div>
         </div>
         <div id="slide3" className="carousel-item relative w-full">
-          <img src="https://i.ibb.co/DD5fP4h/img-3.jpg" className="w-full h-[560px]" />
-          <div className="absolute inset-0 bg-black opacity-50"></div>
+          <img src="https://i.ibb.co/DD5fP4h/img-3.jpg" className="w-full rounded-lg h-[560px]" />
+          <div className="absolute rounded-lg inset-0 bg-black opacity-50"></div>
           <div
             data-aos="zoom-in"
             className="flex absolute flex-col space-y-6 justify-center my-36 items-center text-white"
@@ -159,8 +159,8 @@ const Home = () => {
           </div>
         </div>
         <div id="slide4" className="carousel-item relative w-full">
-          <img src="https://i.ibb.co/WVvyM1Z/img-4.jpg" className="w-full h-[560px]" />
-          <div className="absolute inset-0 bg-black opacity-50"></div>
+          <img src="https://i.ibb.co/WVvyM1Z/img-4.jpg" className="w-full rounded-lg h-[560px]" />
+          <div className="absolute rounded-lg inset-0 bg-black opacity-50"></div>
           <div
             data-aos="zoom-in"
             className="flex absolute flex-col space-y-6 justify-center my-36 items-center text-white"
@@ -200,8 +200,8 @@ const Home = () => {
           </div>
         </div>
         <div id="slide5" className="carousel-item relative w-full">
-          <img src="https://i.ibb.co/wCC9Bsj/img-5.jpg" className="w-full h-[560px]" />
-          <div className="absolute inset-0 bg-black opacity-50"></div>
+          <img src="https://i.ibb.co/wCC9Bsj/img-5.jpg" className="w-full rounded-lg h-[560px]" />
+          <div className="absolute rounded-lg inset-0 bg-black opacity-50"></div>
           <div
             data-aos="zoom-in"
             className="flex absolute flex-col space-y-6 justify-center my-36 items-center text-white"

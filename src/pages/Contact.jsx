@@ -21,7 +21,7 @@ const Contact = () => {
       <Helmet>
         <title>Living-Link | Contact</title>
       </Helmet>
-      <div className="grid max-w-screen-xl mt-10 grid-cols-1 gap-8 px-8 py-16 mx-auto rounded-lg md:grid-cols-2 md:px-12 lg:px-16 xl:px-32 dark:bg-[#c5c3c3] dark:text-gray-800">
+      <div className="grid my-5 grid-cols-1 gap-8 px-8 py-16 mx-auto rounded-lg md:grid-cols-2 md:px-12 lg:px-16 xl:px-32 dark:bg-[#c5c3c3] dark:text-gray-800">
         <div className="flex flex-col justify-between">
           <div className="space-y-2">
             <h2 className="animate__animated animate__fadeInDown text-4xl text-black font-bold leading-tight lg:text-5xl">
@@ -86,9 +86,9 @@ const Contact = () => {
       </div>
       <dialog
         id="my_modal_5"
-        className="modal bg-white modal-bottom sm:modal-middle"
+        className="modal modal-bottom sm:modal-middle"
       >
-        <div className="modal-box">
+        <div className="modal-box bg-white">
           <h3 className="font-bold text-lg">Hello {name && name}!</h3>
           <p className="py-4">
             We will Notify you as soon as possible. Thanks For being connected.
