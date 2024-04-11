@@ -1,9 +1,4 @@
 import { useContext, useEffect, useState } from "react";
-// import img1 from "https://i.ibb.co/H44bsJx/img-1.jpg";
-// import img2 from "https://i.ibb.co/KDRmtgK/img-2.jpg";
-// import img3 from "https://i.ibb.co/DD5fP4h/img-3.jpg";
-// import img4 from "https://i.ibb.co/WVvyM1Z/img-4.jpg";
-// import img5 from "https://i.ibb.co/wCC9Bsj/img-5.jpg";
 import HomeCard from "../Components/HomeCard";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
@@ -11,6 +6,7 @@ import Loader from "../Components/Loader";
 import { Helmet } from "react-helmet-async";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import Slider from "../Components/Slider";
 AOS.init({
   duration: 1000,
 });
@@ -36,7 +32,10 @@ const Home = () => {
       </Helmet>
       <div data-aos="fade-right" className="carousel w-full mb-5 rounded-lg">
         <div id="slide1" className="carousel-item relative w-full">
-          <img src="https://i.ibb.co/H44bsJx/img-1.jpg" className="w-full rounded-lg h-[560px]" />
+          <img
+            src="https://i.ibb.co/H44bsJx/img-1.jpg"
+            className="w-full rounded-lg h-[560px]"
+          />
           <div className="absolute rounded-lg inset-0 bg-black opacity-50"></div>
           <div
             data-aos="zoom-in"
@@ -77,7 +76,10 @@ const Home = () => {
           </div>
         </div>
         <div id="slide2" className="carousel-item relative w-full">
-          <img src="https://i.ibb.co/KDRmtgK/img-2.jpg" className="w-full rounded-lg h-[560px]" />
+          <img
+            src="https://i.ibb.co/KDRmtgK/img-2.jpg"
+            className="w-full rounded-lg h-[560px]"
+          />
           <div className="absolute rounded-lg inset-0 bg-black opacity-50"></div>
           <div
             data-aos="zoom-in"
@@ -117,7 +119,10 @@ const Home = () => {
           </div>
         </div>
         <div id="slide3" className="carousel-item relative w-full">
-          <img src="https://i.ibb.co/DD5fP4h/img-3.jpg" className="w-full rounded-lg h-[560px]" />
+          <img
+            src="https://i.ibb.co/DD5fP4h/img-3.jpg"
+            className="w-full rounded-lg h-[560px]"
+          />
           <div className="absolute rounded-lg inset-0 bg-black opacity-50"></div>
           <div
             data-aos="zoom-in"
@@ -159,7 +164,10 @@ const Home = () => {
           </div>
         </div>
         <div id="slide4" className="carousel-item relative w-full">
-          <img src="https://i.ibb.co/WVvyM1Z/img-4.jpg" className="w-full rounded-lg h-[560px]" />
+          <img
+            src="https://i.ibb.co/WVvyM1Z/img-4.jpg"
+            className="w-full rounded-lg h-[560px]"
+          />
           <div className="absolute rounded-lg inset-0 bg-black opacity-50"></div>
           <div
             data-aos="zoom-in"
@@ -200,7 +208,10 @@ const Home = () => {
           </div>
         </div>
         <div id="slide5" className="carousel-item relative w-full">
-          <img src="https://i.ibb.co/wCC9Bsj/img-5.jpg" className="w-full rounded-lg h-[560px]" />
+          <img
+            src="https://i.ibb.co/wCC9Bsj/img-5.jpg"
+            className="w-full rounded-lg h-[560px]"
+          />
           <div className="absolute rounded-lg inset-0 bg-black opacity-50"></div>
           <div
             data-aos="zoom-in"
@@ -255,6 +266,18 @@ const Home = () => {
         {estate.map((singleEstate, idx) => (
           <HomeCard key={idx} singleEstate={singleEstate} />
         ))}
+      </div>
+      <div className="my-10">
+        <div className="flex flex-col my-10 items-center">
+          <h3 data-aos="zoom-in-right" className="text-3xl mt-10 font-bold">
+            Key Features of Our Rental House Listings
+          </h3>
+          <p data-aos="zoom-out-right" className="text-center my-5 md:w-[80%]">
+            Explore the standout features that make our rental house listings a
+            top choice for tenants:
+          </p>
+        </div>
+        <Slider />
       </div>
     </div>
   );
