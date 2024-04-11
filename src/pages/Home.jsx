@@ -1,9 +1,9 @@
 import { useContext, useEffect, useState } from "react";
-import img1 from "https://i.ibb.co/H44bsJx/img-1.jpg";
-import img2 from "https://i.ibb.co/KDRmtgK/img-2.jpg";
-import img3 from "https://i.ibb.co/DD5fP4h/img-3.jpg";
-import img4 from "https://i.ibb.co/WVvyM1Z/img-4.jpg";
-import img5 from "https://i.ibb.co/wCC9Bsj/img-5.jpg";
+// import img1 from "https://i.ibb.co/H44bsJx/img-1.jpg";
+// import img2 from "https://i.ibb.co/KDRmtgK/img-2.jpg";
+// import img3 from "https://i.ibb.co/DD5fP4h/img-3.jpg";
+// import img4 from "https://i.ibb.co/WVvyM1Z/img-4.jpg";
+// import img5 from "https://i.ibb.co/wCC9Bsj/img-5.jpg";
 import HomeCard from "../Components/HomeCard";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
@@ -34,9 +34,9 @@ const Home = () => {
       <Helmet>
         <title>Living-Link | Home</title>
       </Helmet>
-      <div data-aos="fade-right" className="carousel w-full my-5 rounded-lg">
+      <div data-aos="fade-right" className="carousel w-full mt-5 md:my-5 rounded-lg">
         <div id="slide1" className="carousel-item relative w-full">
-          <img src={img1} className="w-full h-[560px]" />
+          <img src="https://i.ibb.co/H44bsJx/img-1.jpg" className="w-full h-[560px]" />
           <div className="absolute inset-0 bg-black opacity-50"></div>
           <div
             data-aos="zoom-in"
@@ -77,7 +77,7 @@ const Home = () => {
           </div>
         </div>
         <div id="slide2" className="carousel-item relative w-full">
-          <img src={img2} className="w-full h-[560px]" />
+          <img src="https://i.ibb.co/KDRmtgK/img-2.jpg" className="w-full h-[560px]" />
           <div className="absolute inset-0 bg-black opacity-50"></div>
           <div
             data-aos="zoom-in"
@@ -117,7 +117,7 @@ const Home = () => {
           </div>
         </div>
         <div id="slide3" className="carousel-item relative w-full">
-          <img src={img3} className="w-full h-[560px]" />
+          <img src="https://i.ibb.co/DD5fP4h/img-3.jpg" className="w-full h-[560px]" />
           <div className="absolute inset-0 bg-black opacity-50"></div>
           <div
             data-aos="zoom-in"
@@ -159,7 +159,7 @@ const Home = () => {
           </div>
         </div>
         <div id="slide4" className="carousel-item relative w-full">
-          <img src={img4} className="w-full h-[560px]" />
+          <img src="https://i.ibb.co/WVvyM1Z/img-4.jpg" className="w-full h-[560px]" />
           <div className="absolute inset-0 bg-black opacity-50"></div>
           <div
             data-aos="zoom-in"
@@ -200,7 +200,7 @@ const Home = () => {
           </div>
         </div>
         <div id="slide5" className="carousel-item relative w-full">
-          <img src={img5} className="w-full h-[560px]" />
+          <img src="https://i.ibb.co/wCC9Bsj/img-5.jpg" className="w-full h-[560px]" />
           <div className="absolute inset-0 bg-black opacity-50"></div>
           <div
             data-aos="zoom-in"
