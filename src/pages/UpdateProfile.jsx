@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { Helmet } from "react-helmet-async";
 import { AuthContext } from "../AuthProvider/AuthProvider";
-import { updateProfile } from "firebase/auth";
+import { updateEmail, updateProfile } from "firebase/auth";
 import { auth } from "../Firebase/firebase.config";
 import Loader from "../Components/Loader";
 import toast from "react-hot-toast";
@@ -18,6 +18,17 @@ const UpdateProfile = () => {
     e.preventDefault();
     const name = e.target.name.value;
     const photo = e.target.photoURL.value;
+    const email = e.target.email.value;
+
+    updateEmail(auth.currentUser, email)
+      .then(() => {
+        console.log("Email Updated to", email);
+        toast.success("Email Updated");
+      })
+      .catch((err) => {
+        console.error(err);
+        toast.error("Failed to update email");
+      });
     updateProfile(auth.currentUser, {
       displayName: name,
       photoURL: photo,
@@ -65,7 +76,7 @@ const UpdateProfile = () => {
               href={user.photoURL}
               className="text-blue-500 w-[50%] no-underline mx-auto font-semibold"
             >
-              {user.photoURL.slice(0,30)}.....
+              {user.photoURL?.slice(0, 30)}.....
             </a>
           </div>
         </div>
@@ -75,18 +86,34 @@ const UpdateProfile = () => {
           Wanna Update your profile?
         </h3>
         <form data-aos="zoom-in-right" onSubmit={handleSubmit}>
+          <label className="text-[14px] font-bold" htmlFor="fullName">
+            Full Name*
+          </label>
           <input
             type="text"
-            className="block bg-gray-100 border border-grey-light w-full p-3 rounded mb-4"
+            className="block mt-2 bg-gray-100 border border-grey-light w-full p-3 rounded mb-4"
             name="name"
-            placeholder="Full Name"
+            placeholder={user.displayName}
             required
           />
+          <label className="text-[14px] font-bold" htmlFor="email">
+            User Email <span className="text-red-500">(Its completely Optional. however because of requirements there is no method implemented in the app that could verify email for updating it.)</span>
+          </label>
+          <input
+            type="email"
+            className="block mt-2 bg-gray-100 border border-grey-light w-full p-3 rounded mb-4"
+            name="email"
+            placeholder={user.email}
+          />
+          <label className="text-[14px] font-bold" htmlFor="photoUrl">
+            Photo URL*
+          </label>
           <input
             type="text"
-            className="block bg-gray-100 border border-grey-light w-full p-3 rounded mb-4"
+            className="block mt-2 bg-gray-100 border border-grey-light w-full p-3 rounded mb-4"
             name="photoURL"
-            placeholder="Your Photo URL"
+            placeholder={user.photoURL}
+            required
           />
           <button
             className="bg-green-500 py-3 text-white font-semibold w-full px-4 rounded-md hover:bg-black transition cursor-pointer duration-500"

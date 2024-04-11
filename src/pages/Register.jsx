@@ -42,6 +42,10 @@ const Register = () => {
       .then((res) => {
         console.log(res.user);
         // const user = res.user; // Get the user object from the response
+        e.target.email.value = "";
+        e.target.password.value = "";
+        e.target.name.value = "";
+        e.target.photoURL.value = "";
         toast.success("Account created successfully");
 
         updateProfile(auth.currentUser, {
@@ -58,6 +62,10 @@ const Register = () => {
       .catch((err) => {
         const errorMessage = handleFirebaseError(err.message);
         console.log(err.message);
+        e.target.email.value = "";
+        e.target.password.value = "";
+        e.target.name.value = "";
+        e.target.photoURL.value = "";
         toast.error(errorMessage);
       });
   };

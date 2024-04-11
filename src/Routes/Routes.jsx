@@ -29,12 +29,20 @@ export const router = createBrowserRouter([
       },
       {
         path: "/property-details/:id",
-        element: <PrivateRoute><PropertyDetails /></PrivateRoute>,
+        element: (
+          <PrivateRoute>
+            <PropertyDetails />
+          </PrivateRoute>
+        ),
         loader: () => fetch("../data.json"),
       },
       {
         path: "/contact",
-        element: <Contact />,
+        element: (
+          <PrivateRoute>
+            <Contact />
+          </PrivateRoute>
+        ),
       },
       {
         path: "/update-profile",

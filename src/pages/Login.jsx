@@ -17,7 +17,7 @@ const Login = () => {
   const emailRef = useRef(); // Add useRef for email input
   const navigate = useNavigate();
   const location = useLocation();
- 
+
   const handleFirebaseError = (errorCode) => {
     switch (errorCode) {
       case "Firebase: Error (auth/invalid-credential).":
@@ -35,10 +35,14 @@ const Login = () => {
     signIn(email, password)
       .then((res) => {
         console.log(res.user);
+        e.target.email.value = "";
+        e.target.password.value = "";
         toast.success("Logged in successfully");
         navigate(location.state ? location.state : "/");
       })
       .catch((err) => {
+        e.target.email.value = "";
+        e.target.password.value = "";
         const errorMessage = handleFirebaseError(err.message);
         toast.error(errorMessage);
       });
@@ -79,7 +83,9 @@ const Login = () => {
       </Helmet>
       <div className="container max-w-md mx-auto flex-1 flex flex-col items-center justify-center px-2">
         <div className="bg-white px-6 py-4 rounded shadow-xl text-black w-full">
-          <h1 data-aos="zoom-in" className="mb-8 text-3xl text-center">Log in</h1>
+          <h1 data-aos="zoom-in" className="mb-8 text-3xl text-center">
+            Log in
+          </h1>
           <form data-aos="zoom-in-right" onSubmit={handleLogin}>
             <input
               type="email"
@@ -114,7 +120,7 @@ const Login = () => {
           </form>
           <div className="flex justify-center gap-5 items-center my-5">
             <button
-            data-aos="zoom-in-up"
+              data-aos="zoom-in-up"
               onClick={loginWithGoogle}
               className="inline-flex overflow-hidden cursor-pointer text-white bg-gray-900 rounded group"
             >
@@ -124,7 +130,7 @@ const Login = () => {
               <span className="pl-4 pr-5 py-2.5">Google</span>
             </button>
             <button
-            data-aos="zoom-in-down"
+              data-aos="zoom-in-down"
               onClick={loginWithGithub}
               className="inline-flex overflow-hidden cursor-pointer text-white bg-gray-900 rounded group"
             >
