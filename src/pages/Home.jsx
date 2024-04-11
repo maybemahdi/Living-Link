@@ -1,9 +1,9 @@
 import { useContext, useEffect, useState } from "react";
-import img1 from "../assets/img_1.jpg";
-import img2 from "../assets/img_2.jpg";
-import img3 from "../assets/img_3.jpg";
-import img4 from "../assets/img_4.jpg";
-import img5 from "../assets/img_5.jpg";
+import img1 from "https://i.ibb.co/H44bsJx/img-1.jpg";
+import img2 from "https://i.ibb.co/KDRmtgK/img-2.jpg";
+import img3 from "https://i.ibb.co/DD5fP4h/img-3.jpg";
+import img4 from "https://i.ibb.co/WVvyM1Z/img-4.jpg";
+import img5 from "https://i.ibb.co/wCC9Bsj/img-5.jpg";
 import HomeCard from "../Components/HomeCard";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
