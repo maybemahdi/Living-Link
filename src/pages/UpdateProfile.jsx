@@ -11,7 +11,7 @@ import "aos/dist/aos.css";
 AOS.init({
   duration: 1000,
 });
-import 'animate.css';
+import "animate.css";
 const UpdateProfile = () => {
   const { user, loading } = useContext(AuthContext);
   const handleSubmit = (e) => {
@@ -24,8 +24,8 @@ const UpdateProfile = () => {
     })
       .then(() => {
         window.location.reload();
-    })
-    .catch((err) => console.log(err));
+      })
+      .catch((err) => console.log(err));
     toast.success("Profile Updated");
   };
   if (loading) {
@@ -36,7 +36,10 @@ const UpdateProfile = () => {
       <Helmet>
         <title>Living-Link | Update profile</title>
       </Helmet>
-      <div data-aos="zoom-in-left" className="flex basis-1/2 flex-col justify-center p-6 shadow-md rounded-xl sm:px-12 dark:bg-gray-50 dark:text-gray-800">
+      <div
+        data-aos="zoom-in-left"
+        className="flex w-full md:basis-1/2 flex-col justify-center p-6 shadow-md rounded-xl dark:bg-gray-50 dark:text-gray-800"
+      >
         <img
           src={user.photoURL}
           alt=""
@@ -45,7 +48,10 @@ const UpdateProfile = () => {
         <div className="space-y-4 text-center divide-y dark:divide-gray-300">
           <div className="my-2 flex flex-col items-center justify-center space-y-5">
             <h2 className="text-xl animate__animated animate__fadeInLeft flex items-center gap-2 font-semibold sm:text-2xl">
-              Name: <span className="animate__animated animate__fadeInRight text-green-500">{user.displayName}</span>
+              Name:{" "}
+              <span className="animate__animated animate__fadeInRight text-green-500">
+                {user.displayName}
+              </span>
             </h2>
             <p className="px-5 animate__animated animate__fadeInDown flex flex-col items-center gap-1 text-xs text-black font-semibold sm:text-base dark:text-gray-600">
               Email:{" "}
@@ -64,8 +70,10 @@ const UpdateProfile = () => {
           </div>
         </div>
       </div>
-      <div className="flex basis-1/2 flex-col gap-5 text-black">
-        <h3 data-aos="zoom-in" className="text-xl font-bold mb-5">Wanna Update your profile?</h3>
+      <div className="flex w-full md:basis-1/2 flex-col gap-5 text-black">
+        <h3 data-aos="zoom-in" className="text-xl font-bold mb-5">
+          Wanna Update your profile?
+        </h3>
         <form data-aos="zoom-in-right" onSubmit={handleSubmit}>
           <input
             type="text"
