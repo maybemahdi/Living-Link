@@ -8,7 +8,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import Slider from "../Components/Slider";
 AOS.init({
-  duration: 1000,
+  duration: 1200,
 });
 
 const Home = () => {
@@ -269,7 +269,7 @@ const Home = () => {
       </div>
       <div className="my-10">
         <div className="flex flex-col my-10 items-center">
-          <h3 data-aos="zoom-in-right" className="text-3xl mt-10 font-bold">
+          <h3 data-aos="zoom-in-right" className="text-3xl text-center mt-10 font-bold">
             Key Features of Our Rental House Listings
           </h3>
           <p data-aos="zoom-out-right" className="text-center my-5 md:w-[80%]">
@@ -283,7 +283,7 @@ const Home = () => {
       </div>
       <div className="my-10">
         <div className="flex flex-col my-10 items-center">
-          <h3 data-aos="zoom-in-left" className="text-3xl mt-10 font-bold">
+          <h3 data-aos="zoom-in-left" className="text-3xl text-center mt-10 font-bold">
             Tenant Testimonials: What Renters Are Saying
           </h3>
           <p data-aos="zoom-out-right" className="text-center my-5 md:w-[80%]">
