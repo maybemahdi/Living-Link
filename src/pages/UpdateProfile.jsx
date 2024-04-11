@@ -57,16 +57,16 @@ const UpdateProfile = () => {
               Email:{" "}
               <span className="text-blue-500 font-semibold">{user.email}</span>
             </p>
-            <p className="px-5 animate__animated animate__fadeInRight flex-col text-black font-semibold flex flex-wrap items-center gap-1 text-xs sm:text-base dark:text-gray-600">
+            <p className="px-5 animate__animated animate__fadeInRight text-black font-semibold gap-1 text-xs sm:text-base dark:text-gray-600">
               User PhotoURL:{" "}
+            </p>
               <a
                 target="_blank"
                 href={user.photoURL}
-                className="text-blue-500 font-semibold"
+                className="text-blue-500 overflow-hidden w-[80%] mx-auto font-semibold"
               >
                 {user.photoURL}
               </a>
-            </p>
           </div>
         </div>
       </div>
