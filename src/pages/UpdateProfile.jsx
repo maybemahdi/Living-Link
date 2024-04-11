@@ -63,7 +63,7 @@ const UpdateProfile = () => {
             <a
               target="_blank"
               href={user.photoURL}
-              className="text-blue-500 w-[50%] no-underline mx-auto overflow-hidden font-semibold"
+              className="text-blue-500 w-[50%] no-underline mx-auto font-semibold"
             >
               {user.photoURL.slice(0,30)}.....
             </a>
