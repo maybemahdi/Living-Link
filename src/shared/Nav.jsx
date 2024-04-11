@@ -179,7 +179,7 @@ const Nav = () => {
         </ul>
       </div>
       <div className="navbar-end gap-4">
-        <div id="rel" className="relative top-[3px]">
+        <div id="rel" className="relative flex justify-center items-center">
           {/* {console.log(user.photoURL)} */}
           {user?.photoURL && (
             <img
@@ -189,7 +189,7 @@ const Nav = () => {
             />
           )}
           {user?.displayName && (
-            <div className="absolute text-center w-[130px] hidden -bottom-8 -left-12 bg-gray-800 text-white px-2 py-1 rounded">
+            <div className="absolute text-center z-10 w-[130px] hidden top-12 -left-10 bg-gray-800 text-white px-2 py-1 rounded">
               {user?.displayName}
             </div>
           )}
