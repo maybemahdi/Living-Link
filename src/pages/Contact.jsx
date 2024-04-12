@@ -17,7 +17,7 @@ const Contact = () => {
     setName(name);
   };
   return (
-    <div data-aos="fade-left">
+    <div data-aos="fade-up">
       <Helmet>
         <title>Living-Link | Contact</title>
       </Helmet>
@@ -40,10 +40,7 @@ const Contact = () => {
         </div>
         <form data-aos="zoom-in" onSubmit={handleSubmit} className="space-y-6">
           <div>
-            <label
-              htmlFor="name"
-              className="text-sm"
-            >
+            <label htmlFor="name" className="text-sm">
               Full name
             </label>
             <input
@@ -84,10 +81,7 @@ const Contact = () => {
           </button>
         </form>
       </div>
-      <dialog
-        id="my_modal_5"
-        className="modal modal-bottom sm:modal-middle"
-      >
+      <dialog id="my_modal_5" className="modal modal-bottom sm:modal-middle">
         <div className="modal-box bg-white">
           <h3 className="font-bold text-lg">Hello {name && name}!</h3>
           <p className="py-4">

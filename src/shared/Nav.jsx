@@ -110,7 +110,7 @@ const Nav = () => {
         </div> */}
         <button
           onClick={toggleNav}
-          className="block md:hidden -ml-2 mr-3 border bg-white border-gray-600 p-2 rounded text-gray-600 hover:bg-gray-200 focus:outline-none"
+          className="block md:hidden cursor-pointer -ml-2 mr-3 border bg-white border-gray-600 p-2 rounded text-gray-600 hover:bg-gray-200 focus:outline-none"
         >
           <svg
             className={`w-7 h-7 ${openNav ? "hidden" : "block"}`}

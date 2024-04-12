@@ -48,7 +48,7 @@ const UpdateProfile = () => {
         <title>Living-Link | Update profile</title>
       </Helmet>
       <div
-        data-aos="zoom-in-left"
+        data-aos="zoom-in"
         className="flex w-full md:basis-1/2 flex-col justify-center p-6 shadow-md rounded-xl dark:bg-gray-50 dark:text-gray-800"
       >
         <img
@@ -74,7 +74,7 @@ const UpdateProfile = () => {
             <a
               target="_blank"
               href={user.photoURL}
-              className="text-blue-500 w-[50%] no-underline mx-auto font-semibold"
+              className="text-blue-500 text-center  no-underline mx-auto font-semibold"
             >
               {user.photoURL?.slice(0, 30)}.....
             </a>
@@ -97,7 +97,12 @@ const UpdateProfile = () => {
             required
           />
           <label className="text-[14px] font-bold" htmlFor="email">
-            User Email <span className="text-red-500">(Its completely Optional. however because of requirements there is no method implemented in the app that could verify email for updating it.)</span>
+            User Email{" "}
+            <span className="text-red-500">
+              (Its completely Optional. however because of requirements there is
+              no method implemented in the app that could verify email for
+              updating it.)
+            </span>
           </label>
           <input
             type="email"

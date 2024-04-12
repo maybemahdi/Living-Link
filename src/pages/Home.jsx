@@ -31,7 +31,7 @@ const Home = () => {
         <title>Living-Link | Home</title>
       </Helmet>
       {/* banner sliders */}
-      <div data-aos="fade-right" className="carousel w-full my-5 rounded-lg">
+      <div data-aos="zoom-in" className="carousel w-full my-5 rounded-lg">
         <div id="slide1" className="carousel-item relative w-full">
           <img
             src="https://i.ibb.co/H44bsJx/img-1.jpg"
@@ -253,8 +253,8 @@ const Home = () => {
         </div>
       </div>
       {/* estate section  */}
-      <div className="my-10 grid grid-cols-1 md:grid-cols-2 gap-6 lg:grid-cols-3">
-        <div className="lg:col-span-3 md:col-span-2 flex flex-col my-5 items-center">
+      <div className="my-10 w-full">
+        <div className="flex flex-col my-5 items-center">
           <h3 data-aos="zoom-in-right" className="text-3xl font-bold">
             Get Your Perfect Home
           </h3>
@@ -265,15 +265,17 @@ const Home = () => {
             today!
           </p>
         </div>
-        {estate.map((singleEstate, idx) => (
-          <HomeCard key={idx} singleEstate={singleEstate} />
-        ))}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:grid-cols-3">
+          {estate.map((singleEstate, idx) => (
+            <HomeCard key={idx} singleEstate={singleEstate} />
+          ))}
+        </div>
       </div>
       {/* features section with swiper slider  */}
       <div className="my-10">
         <div className="flex flex-col my-10 items-center">
           <h3
-            data-aos="zoom-in-right"
+            data-aos="zoom-in"
             className="text-3xl text-center mt-10 font-bold"
           >
             Key Features of Our Rental House Listings
@@ -291,7 +293,7 @@ const Home = () => {
       <div className="my-10">
         <div className="flex flex-col my-10 items-center">
           <h3
-            data-aos="zoom-in-left"
+            data-aos="zoom-in"
             className="text-3xl text-center mt-10 font-bold"
           >
             Tenant Testimonials: What Renters Are Saying
@@ -308,7 +310,7 @@ const Home = () => {
           className="grid gap-8 grid-cols-1 lg:grid-cols-3"
         >
           <div
-            data-aos="fade-left"
+            data-aos="fade-down"
             className="container flex flex-col w-full max-w-lg p-6 mx-auto divide-y rounded-md dark:divide-gray-300 dark:bg-slate-200 dark:text-gray-800"
           >
             <div className="flex justify-between p-4">
@@ -366,7 +368,7 @@ const Home = () => {
             </div>
           </div>
           <div
-            data-aos="fade-up"
+            data-aos="fade-down"
             className="container flex flex-col w-full max-w-lg p-6 mx-auto divide-y rounded-md dark:divide-gray-300 dark:bg-slate-200 dark:text-gray-800"
           >
             <div className="flex justify-between p-4">
@@ -424,7 +426,7 @@ const Home = () => {
             </div>
           </div>
           <div
-            data-aos="fade-right"
+            data-aos="fade-down"
             className="container flex flex-col w-full max-w-lg p-6 mx-auto divide-y rounded-md dark:divide-gray-300 dark:bg-slate-200 dark:text-gray-800"
           >
             <div className="flex justify-between p-4">
@@ -473,12 +475,13 @@ const Home = () => {
                 aspect of the property, from the well-maintained landscaping to
                 the modern kitchen appliances.
               </p>
-              <p>however, was the level of customer
-                service provided by DEF Rentals. They were responsive,
-                professional, and always willing to go the extra mile to ensure
-                my satisfaction as a tenant. Overall,If you're in the
-                market for a rental home and want a company that truly cares
-                about its tenants, look no further than DEF Rentals.
+              <p>
+                however, was the level of customer service provided by DEF
+                Rentals. They were responsive, professional, and always willing
+                to go the extra mile to ensure my satisfaction as a tenant.
+                Overall,If you're in the market for a rental home and want a
+                company that truly cares about its tenants, look no further than
+                DEF Rentals.
               </p>
             </div>
           </div>

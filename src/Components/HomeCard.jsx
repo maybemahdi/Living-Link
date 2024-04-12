@@ -10,15 +10,15 @@ const HomeCard = ({ singleEstate }) => {
     singleEstate;
   return (
     <div
-      data-aos="zoom-in-left"
-      className="mx-auto w-full bg-white shadow-lg rounded-lg overflow-hidden"
+      data-aos="zoom-in"
+      className="w-full mx-auto bg-white shadow-lg overflow-hidden rounded-lg"
     >
       <img
-        className="w-full h-48 object-cover object-center"
+        className="w-full rounded-t-lg h-48 object-cover object-center"
         src={image}
         alt="estate_image"
       />
-      <div className="p-6">
+      <div className="p-6 animate__animated animate__fadeInUp">
         <h2 className="text-xl font-semibold text-gray-800 truncate">
           {estate_title}
         </h2>
@@ -32,7 +32,7 @@ const HomeCard = ({ singleEstate }) => {
           <p className="text-gray-700">Area: {area}</p>
           <p className="text-gray-700 h-10">Location: {location}</p>
         </div> */}
-        <div className="flex mt-4 items-center justify-between">
+        <div className="flex flex-col mt-4 items-start justify-center">
           <div>
             <p className="text-gray-600 flex flex-col font-semibold text-lg">
               Facilities:
