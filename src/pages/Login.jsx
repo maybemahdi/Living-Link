@@ -12,7 +12,8 @@ AOS.init({
 });
 
 const Login = () => {
-  const { signIn, googleLogin, githubLogin } = useContext(AuthContext);
+  const { signIn, googleLogin, githubLogin, setLoading } =
+    useContext(AuthContext);
   const [showPassword, setShowPassword] = useState(false);
   const emailRef = useRef(); // Add useRef for email input
   const navigate = useNavigate();
@@ -41,6 +42,7 @@ const Login = () => {
         navigate(location.state ? location.state : "/");
       })
       .catch((err) => {
+        setLoading(false);
         e.target.email.value = "";
         e.target.password.value = "";
         const errorMessage = handleFirebaseError(err.message);
@@ -54,7 +56,10 @@ const Login = () => {
         toast.success("Logged in successfully");
         navigate(location.state ? location.state : "/");
       })
-      .catch((err) => console.log(err));
+      .catch((error) => {
+        console.log(error);
+        setLoading(false);
+      });
   };
   const loginWithGithub = () => {
     githubLogin()
@@ -64,15 +69,8 @@ const Login = () => {
         navigate(location.state ? location.state : "/");
       })
       .catch((error) => {
-        // Check if the error is due to invalid credentials
-        if (error.code === "auth/invalid-credential") {
-          // Display toast for wrong password
-          toast.error("Wrong password. Please enter correct credentials.");
-        } else {
-          // For other errors, display a generic error message
-          toast.error("An error occurred. Please try again later.");
-        }
-        toast.error("Error signing in: ", error);
+        console.log(error);
+        setLoading(false);
       });
   };
 

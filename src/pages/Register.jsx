@@ -9,7 +9,7 @@ import { Helmet } from "react-helmet-async";
 import "animate.css";
 
 const Register = () => {
-  const { createUser } = useContext(AuthContext);
+  const { createUser, setUpdate, update, setLoading } = useContext(AuthContext);
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
   const handleFirebaseError = (errorCode) => {
@@ -31,11 +31,24 @@ const Register = () => {
     if (password.length < 6) {
       return toast.error("Password must be 6 characters or longer");
     }
-
+    
     if (!passwordRegex.test(password)) {
       return toast.error(
         "Password must contain at least one uppercase and one lowercase letter"
       );
+    }
+
+    if (!name) {
+      return toast.error("You Must Provide your Name");
+    }
+    if (!photo) {
+      return toast.error("You Must Provide a Photo URL");
+    }
+    if (!password) {
+      return toast.error("You Must Provide a Password");
+    }
+    if (!email) {
+      return toast.error("You Must Provide a Email");
     }
 
     createUser(email, password)
@@ -53,13 +66,15 @@ const Register = () => {
           photoURL: photo,
         })
           .then(() => {
+            setUpdate(!update);
             toast.success("Profile Updated");
-            window.location.reload();
+            // window.location.reload();
           })
           .catch((err) => console.log(err));
         navigate("/");
       })
       .catch((err) => {
+        setLoading(false);
         const errorMessage = handleFirebaseError(err.message);
         console.log(err.message);
         e.target.email.value = "";
@@ -87,14 +102,12 @@ const Register = () => {
                 className="block bg-gray-100 border border-grey-light w-full p-3 rounded mb-4"
                 name="name"
                 placeholder="Full Name"
-                required
               />
               <input
                 type="email"
                 className="block bg-gray-100 border border-grey-light w-full p-3 rounded mb-4"
                 name="email"
                 placeholder="Email"
-                required
               />
               <input
                 type="text"

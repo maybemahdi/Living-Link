@@ -13,31 +13,35 @@ AOS.init({
 });
 import "animate.css";
 const UpdateProfile = () => {
-  const { user, loading } = useContext(AuthContext);
+  const { user, loading, setUpdate, update } = useContext(AuthContext);
   const handleSubmit = (e) => {
     e.preventDefault();
     const name = e.target.name.value;
     const photo = e.target.photoURL.value;
-    const email = e.target.email.value;
+    // const email = e.target.email.value;
 
-    updateEmail(auth.currentUser, email)
-      .then(() => {
-        console.log("Email Updated to", email);
-        toast.success("Email Updated");
-      })
-      .catch((err) => {
-        console.error(err);
-        toast.error("Failed to update email");
-      });
+    // updateEmail(auth.currentUser, email)
+    //   .then(() => {
+    //     console.log("Email Updated to");
+    //     // toast.success("Email Updated");
+    //   })
+    //   .catch((err) => {
+    //     console.error(err);
+    //     // toast.error("Failed to update email");
+    //   });
     updateProfile(auth.currentUser, {
       displayName: name,
       photoURL: photo,
     })
       .then(() => {
-        window.location.reload();
+        // window.location.reload();
+        setUpdate(!update);
+        toast.success("Profile Updated");
+        e.target.name.value = "";
+        e.target.email.value = "";
+        e.target.photoURL.value = "";
       })
       .catch((err) => console.log(err));
-    toast.success("Profile Updated");
   };
   if (loading) {
     return <Loader />;
@@ -99,7 +103,7 @@ const UpdateProfile = () => {
           <label className="text-[14px] font-bold" htmlFor="email">
             User Email{" "}
             <span className="text-red-500">
-              (Its completely Optional. however because of requirements there is
+              (Disabled, however because of requirements there is
               no method implemented in the app that could verify email for
               updating it.)
             </span>
@@ -109,6 +113,7 @@ const UpdateProfile = () => {
             className="block mt-2 bg-gray-100 border border-grey-light w-full p-3 rounded mb-4"
             name="email"
             placeholder={user.email}
+            disabled
           />
           <label className="text-[14px] font-bold" htmlFor="photoUrl">
             Photo URL*
