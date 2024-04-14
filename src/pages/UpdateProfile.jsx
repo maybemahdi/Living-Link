@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { Helmet } from "react-helmet-async";
 import { AuthContext } from "../AuthProvider/AuthProvider";
-import { updateEmail, updateProfile } from "firebase/auth";
+import { updateProfile } from "firebase/auth";
 import { auth } from "../Firebase/firebase.config";
 import Loader from "../Components/Loader";
 import toast from "react-hot-toast";
@@ -18,17 +18,6 @@ const UpdateProfile = () => {
     e.preventDefault();
     const name = e.target.name.value;
     const photo = e.target.photoURL.value;
-    // const email = e.target.email.value;
-
-    // updateEmail(auth.currentUser, email)
-    //   .then(() => {
-    //     console.log("Email Updated to");
-    //     // toast.success("Email Updated");
-    //   })
-    //   .catch((err) => {
-    //     console.error(err);
-    //     // toast.error("Failed to update email");
-    //   });
     updateProfile(auth.currentUser, {
       displayName: name,
       photoURL: photo,
@@ -87,7 +76,10 @@ const UpdateProfile = () => {
       </div>
       <div className="flex w-full md:basis-1/2 flex-col gap-5 text-black">
         <h3 data-aos="zoom-in" className="text-xl font-bold mb-5">
-          Wanna Update your profile?
+          Want to Update your{" "}
+          <span className="animate__animated animate__bounceIn text-green-500">
+            Profile?
+          </span>
         </h3>
         <form data-aos="zoom-in-right" onSubmit={handleSubmit}>
           <label className="text-[14px] font-bold" htmlFor="fullName">
@@ -103,9 +95,8 @@ const UpdateProfile = () => {
           <label className="text-[14px] font-bold" htmlFor="email">
             User Email{" "}
             <span className="text-red-500">
-              (Disabled, however because of requirements there is
-              no method implemented in the app that could verify email for
-              updating it.)
+              (Disabled, however because of requirements there is no method
+              implemented in the app that could verify email for updating it.)
             </span>
           </label>
           <input

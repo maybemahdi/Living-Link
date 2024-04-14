@@ -183,7 +183,7 @@ const Nav = () => {
           {/* {console.log(user.photoURL)} */}
           {user?.photoURL && (
             <img
-              className="w-11 rounded-full cursor-pointer"
+              className="w-11 h-11 rounded-full cursor-pointer"
               src={user?.photoURL}
               alt=""
             />
